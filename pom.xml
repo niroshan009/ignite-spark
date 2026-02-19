@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>ignite-spark</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.iceberg</groupId>
+            <artifactId>iceberg-spark-runtime-3.3_2.13</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <!-- Add Spark Core and SQL if not already present -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.13</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.13</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>3.3.1</version> <!-- Match this with your Hadoop version -->
+        </dependency>
+
+        <!-- AWS SDK - required by hadoop-aws -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-bundle</artifactId>
+            <version>1.11.1026</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-avro_2.13</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
+        <!-- Source: https://mvnrepository.com/artifact/org.apache.ignite/ignite-spark-ext -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.ignite</groupId>-->
+        <!--            <artifactId>ignite-spark-ext</artifactId>-->
+        <!--            <version>4.0.0</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; Source: https://mvnrepository.com/artifact/org.apache.ignite/ignite-core &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.ignite</groupId>-->
+        <!--            <artifactId>ignite-core</artifactId>-->
+        <!--            <version>3.0.0</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; Source: https://mvnrepository.com/artifact/org.apache.ignite/ignite-spark &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.ignite</groupId>-->
+        <!--            <artifactId>ignite-spark</artifactId>-->
+        <!--            <version>2.13.0</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.ignite</groupId>-->
+        <!--            <artifactId>ignite-core</artifactId>-->
+        <!--            <version>2.16.0</version>-->
+        <!--        </dependency>-->
+
+        <!-- Source: https://mvnrepository.com/artifact/org.apache.ignite/ignite-jdbc -->
+        <dependency>
+            <groupId>org.apache.ignite</groupId>
+            <artifactId>ignite-jdbc</artifactId>
+            <version>3.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>1.12.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
+                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
