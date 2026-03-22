@@ -66,11 +66,6 @@ public class IgniteMain {
 //        df.show();
 
 
-
-
-
-
-
         Dataset<Row> teamsDf = sparkSession.readStream()
                 .format("iceberg")
                 // .option("stream-from-timestamp", String.valueOf(streamStartTimestamp)) // Start from a specific time
@@ -89,18 +84,14 @@ public class IgniteMain {
                 .load(referenceData);
 
 
-
-
         teamsDf.writeStream()
-                .foreachBatch((var batch, var batchId)-> {
-
-
+                .foreachBatch((var batch, var batchId) -> {
 
 
                     Dataset<Row> memberIds = batch.withColumn("extracted_teamId",
                             transform(col("teams"), team ->
 
-                                            team.getField("teamId")
+                                    team.getField("teamId")
 
                             )
                     ).select("extracted_teamId");
@@ -108,7 +99,6 @@ public class IgniteMain {
 
                     memberIds.printSchema();
                     memberIds.show(false);
-
 
 
                     memberIds = memberIds.select(explode(col("extracted_teamId")).as("extracted_teamId"));
@@ -121,9 +111,7 @@ public class IgniteMain {
                     String memberIdsString = String.join("','", memberList);
 
 
-
-
-                    String query = "select teamId,teamName from Teamsref where teamId in ('"+memberIdsString+"')"  ;
+                    String query = "select teamId,teamName from Teamsref where teamId in ('" + memberIdsString + "')";
 
                     System.out.printf("QUERY:::: %s", query);
                     Dataset<Row> teamsRef = sparkSession.read()
@@ -132,94 +120,113 @@ public class IgniteMain {
                             .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
 //                            .option("dbtable", "Teamsref")
                             .option("fetchSize", "100000")
-                            .option("query", query )
+                            .option("query", query)
                             .load();
                     teamsRef.show();
+
+                    Dataset<Row> teamsLookupDs = teamsRef
+                            .select(struct(col("teamId"), col("TEAMNAME")).as("entry"))
+                            .agg(collect_list("entry").as("entries"))
+                            .select(map_from_entries(col("entries")).as("teams_lookup"));
+
+                    teamsLookupDs.printSchema();
+                    teamsLookupDs.show(false);
 
 
                     // project id enrichment
 
-                    Dataset<Row> projectIds = batch.withColumn("extracted_teamId",
-                            transform(col("teams"), team ->
+                    Dataset<Row> projectIds = batch.withColumn("extracted_projectId",
+                            transform(col("projects"), team ->
 
-                                    team.getField("teamId")
+                                    team.getField("projectId")
 
                             )
-                    ).select("extracted_teamId");
+                    ).select("extracted_projectId");
 
 
                     projectIds.printSchema();
                     projectIds.show(false);
 
 
-
-                    projectIds = projectIds.select(explode(col("extracted_teamId")).as("extracted_teamId"));
+                    projectIds = projectIds.select(explode(col("extracted_projectId")).as("extracted_projectId"));
 
                     List<String> projectList = new ArrayList<>();
-                    List<Row> projectIdList = memberIds.collectAsList();
-                    for (Row row : memberIdList) {
+                    List<Row> projectIdList = projectIds.collectAsList();
+                    for (Row row : projectIdList) {
                         projectList.add(row.getString(0));
                     }
                     String projectIdString = String.join("','", projectList);
 
 
+                    String projectIdQuery = "select PROJECTID,PROJECTNAME from Teamsref where PROJECTID in ('" + projectIdString + "')";
 
-
-                    String projectIdQuery = "select teamId,teamName from Teamsref where PROJECTID in ('"+projectIdString+"')"  ;
-
-                    System.out.printf("QUERY:::: %s", query);
+                    System.out.printf("QUERY:::: %s", projectIdQuery);
                     Dataset<Row> projectRefs = sparkSession.read()
                             .format("jdbc")
                             .option("url", "jdbc:ignite:thin://localhost:10800")
                             .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
 //                            .option("dbtable", "Teamsref")
                             .option("fetchSize", "100000")
-                            .option("query", query )
+                            .option("query", projectIdQuery)
                             .load();
-                    teamsRef.show();
 
 
-
-
-
-
-                    Dataset<Row> lookupDS = teamsRef
-                            .select(struct(col("teamId"), col("TEAMNAME")).as("entry"))
+                    Dataset<Row> projectLookupDs = projectRefs
+                            .select(struct(col("PROJECTID"), col("PROJECTNAME")).as("entry"))
                             .agg(collect_list("entry").as("entries"))
-                            .select(map_from_entries(col("entries")).as("lookup_map"));
+                            .select(map_from_entries(col("entries")).as("projects_lookup"));
 
-                    lookupDS.printSchema();
-                    lookupDS.show(false);
+                    teamsLookupDs.printSchema();
+                    teamsLookupDs.show(false);
+
 
 // 2. Attach this single map to every row in your main batch
 // Because lookupDS only has ONE row, this cross join does NOT duplicate rows
-                    Dataset<Row> joinedBatch = batch.crossJoin(broadcast(lookupDS));
+                    Dataset<Row> joinedBatch = batch
+                            .crossJoin(broadcast(teamsLookupDs))
+                            .crossJoin(broadcast(projectLookupDs));
+
 
 // 3. Perform the lookup inside your existing transform logic
                     Dataset<Row> result = joinedBatch.withColumn("teams",
-                            transform(col("teams"), team -> {
-                                // Look up values directly from the attached map column
-                                Column foundName = coalesce(element_at(col("lookup_map"), team.getField("teamId")), lit("temp"));
+                                    transform(col("teams"), team -> {
+                                        // Look up values directly from the attached map column
+                                        Column foundName = coalesce(element_at(col("teams_lookup"), team.getField("teamId")), lit("team"));
 
-                                return team.withField("members",
-                                        transform(team.getField("members"), member ->
-                                                member.withField("ENRICH", struct(foundName.as("TEAMNAME")))
-                                        )
-                                );
-                            })
-                    ).drop("lookup_map");
+                                        return team.withField("members",
+                                                transform(team.getField("members"), member ->
+                                                        member.withField("ENRICH", struct(foundName.as("TEAMNAME")))
+                                                )
+                                        );
+                                    })
+                            )
+
+                            .withColumn("projects",
+                                    transform(col("projects"), project -> {
+                                        // Look up values directly from the attached map column
+                                        Column foundName = coalesce(element_at(col("projects_lookup"), project.getField("projectId")), lit("project"));
+
+                                        return project.withField("projects",
+                                                transform(project.getField("tasks"), member ->
+                                                        member.withField("ENRICH", struct(foundName.as("PROJECTNAME")))
+                                                )
+                                        );
+                                    })
+                            )
 
 
-                    result.show();
+                            .drop("teams_lookup");
+
+
+                    result.show(false);
 
                     result.explain("cost");
-
 
 
                     result.show(Integer.MAX_VALUE, false);
 
                     System.out.printf("count %d \n", batch.count());
-                    System.out.println("batch id : "+batchId);
+                    System.out.println("batch id : " + batchId);
 
                 })
                 .start()
