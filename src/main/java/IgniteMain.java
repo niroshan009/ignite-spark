@@ -180,11 +180,60 @@ public class IgniteMain {
                     teamsLookupDs.show(false);
 
 
+                    // department enrichment
+                    Dataset<Row> departmentIds = batch.withColumn("extracted_departmentIds",
+                            transform(col("departments"), team ->
+
+                                    team.getField("deptId")
+
+                            )
+                    ).select("extracted_departmentIds");
+
+
+                    departmentIds.printSchema();
+                    departmentIds.show(false);
+
+
+                    departmentIds = departmentIds.select(explode(col("extracted_departmentIds")).as("extracted_departmentIds"));
+
+                    List<String> departmentList = new ArrayList<>();
+                    List<Row> departmentIdList = departmentIds.collectAsList();
+                    for (Row row : departmentIdList) {
+                        departmentList.add(row.getString(0));
+                    }
+                    String departmentString = String.join("','", departmentList);
+
+
+                    String departmentQuery = "select DEPTID,DEPTNAME from Teamsref where DEPTID in ('" + departmentString + "')";
+
+                    System.out.printf("QUERY:::: %s", departmentQuery);
+                    Dataset<Row> departmentRef = sparkSession.read()
+                            .format("jdbc")
+                            .option("url", "jdbc:ignite:thin://localhost:10800")
+                            .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
+//                            .option("dbtable", "Teamsref")
+                            .option("fetchSize", "100000")
+                            .option("query", departmentQuery)
+                            .load();
+
+
+                    Dataset<Row> departmentLookupDs = departmentRef
+                            .select(struct(col("DEPTID"), col("DEPTNAME")).as("entry"))
+                            .agg(collect_list("entry").as("entries"))
+                            .select(map_from_entries(col("entries")).as("departments_lookup"));
+
+                    teamsLookupDs.printSchema();
+                    teamsLookupDs.show(false);
+
+
+
+
 // 2. Attach this single map to every row in your main batch
 // Because lookupDS only has ONE row, this cross join does NOT duplicate rows
                     Dataset<Row> joinedBatch = batch
                             .crossJoin(broadcast(teamsLookupDs))
-                            .crossJoin(broadcast(projectLookupDs));
+                            .crossJoin(broadcast(projectLookupDs))
+                            .crossJoin(departmentLookupDs);
 
 
 // 3. Perform the lookup inside your existing transform logic
@@ -206,9 +255,22 @@ public class IgniteMain {
                                         // Look up values directly from the attached map column
                                         Column foundName = coalesce(element_at(col("projects_lookup"), project.getField("projectId")), lit("project"));
 
-                                        return project.withField("projects",
+                                        return project.withField("tasks",
                                                 transform(project.getField("tasks"), member ->
                                                         member.withField("ENRICH", struct(foundName.as("PROJECTNAME")))
+                                                )
+                                        );
+                                    })
+                            )
+
+                            .withColumn("departments",
+                                    transform(col("departments"), project -> {
+                                        // Look up values directly from the attached map column
+                                        Column foundName = coalesce(element_at(col("departments_lookup"), project.getField("deptId")), lit("department"));
+
+                                        return project.withField("employees",
+                                                transform(project.getField("employees"), member ->
+                                                        member.withField("ENRICH", struct(foundName.as("DEPTNAME")))
                                                 )
                                         );
                                     })
