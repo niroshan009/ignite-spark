@@ -1,0 +1,215 @@
+{
+  "type": "record",
+  "name": "Organization",
+  "namespace": "com.example.avro",
+  "fields": [
+    {
+      "name": "orgId",
+      "type": "string"
+    },
+    {
+      "name": "orgName",
+      "type": "string"
+    },
+    {
+      "name": "teams",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Team",
+          "fields": [
+            {
+              "name": "teamId",
+              "type": "string"
+            },
+            {
+              "name": "teamName",
+              "type": "string"
+            },
+            {
+              "name": "members",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "Member",
+                  "fields": [
+                    {
+                      "name": "memberId",
+                      "type": "string"
+                    },
+                    {
+                      "name": "memberName",
+                      "type": "string"
+                    },
+                    {
+                      "name": "position",
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "projects",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Project",
+          "fields": [
+            {
+              "name": "projectId",
+              "type": "string"
+            },
+            {
+              "name": "projectName",
+              "type": "string"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            },
+            {
+              "name": "tasks",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "Task",
+                  "fields": [
+                    {
+                      "name": "taskId",
+                      "type": "string"
+                    },
+                    {
+                      "name": "taskName",
+                      "type": "string"
+                    },
+                    {
+                      "name": "assignee",
+                      "type": "string"
+                    },
+                    {
+                      "name": "dueDate",
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "departments",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Department",
+          "fields": [
+            {
+              "name": "deptId",
+              "type": "string"
+            },
+            {
+              "name": "deptName",
+              "type": "string"
+            },
+            {
+              "name": "budget",
+              "type": "double"
+            },
+            {
+              "name": "employees",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "Employee",
+                  "fields": [
+                    {
+                      "name": "empId",
+                      "type": "string"
+                    },
+                    {
+                      "name": "empName",
+                      "type": "string"
+                    },
+                    {
+                      "name": "role",
+                      "type": "string"
+                    },
+                    {
+                      "name": "salary",
+                      "type": "double"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "offices",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Office",
+          "fields": [
+            {
+              "name": "officeId",
+              "type": "string"
+            },
+            {
+              "name": "location",
+              "type": "string"
+            },
+            {
+              "name": "capacity",
+              "type": "int"
+            },
+            {
+              "name": "facilities",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "Facility",
+                  "fields": [
+                    {
+                      "name": "facilityId",
+                      "type": "string"
+                    },
+                    {
+                      "name": "facilityName",
+                      "type": "string"
+                    },
+                    {
+                      "name": "quantity",
+                      "type": "int"
+                    },
+                    {
+                      "name": "available",
+                      "type": "boolean"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+[
+  {
+    "orgId": "ORG_FINTECH_SG",
+    "orgName": "FinTech Solutions Singapore",
+    "teams": [
+      {
+        "teamId": "TEAM_PLATFORM",
+        "teamName": "Platform Engineering",
+        "members": [
+          {
+            "memberId": "M001",
+            "memberName": "Alice Tan",
+            "position": "Tech Lead"
+          },
+          {
+            "memberId": "M002",
+            "memberName": "Ravi Kumar",
+            "position": "Backend Engineer"
+          }
+        ]
+      },
+      {
+        "teamId": "TEAM_DATA",
+        "teamName": "Data Engineering",
+        "members": [
+          {
+            "memberId": "M003",
+            "memberName": "Wei Liang",
+            "position": "Data Engineer"
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "projectId": "PRJ_PAYMENT_GATEWAY",
+        "projectName": "NextGen Payment Gateway",
+        "status": "IN_PROGRESS",
+        "tasks": [
+          {
+            "taskId": "T001",
+            "taskName": "API Integration",
+            "assignee": "Ravi Kumar",
+            "dueDate": "2026-03-15"
+          }
+        ]
+      }
+    ],
+    "departments": [
+      {
+        "deptId": "DEPT_ENGINEERING",
+        "deptName": "Engineering",
+        "budget": 2500000.00,
+        "employees": [
+          {
+            "empId": "E001",
+            "empName": "Alice Tan",
+            "role": "Engineering Manager",
+            "salary": 150000.00
+          }
+        ]
+      }
+    ],
+    "offices": [
+      {
+        "officeId": "OFFICE_SG_MARINA",
+        "location": "Singapore - Marina Bay",
+        "capacity": 250,
+        "facilities": [
+          {
+            "facilityId": "FAC_CONF_01",
+            "facilityName": "Conference Room",
+            "quantity": 5,
+            "available": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "orgId": "ORG_ECOMMERCE_APAC",
+    "orgName": "APAC E-Commerce Group",
+    "teams": [
+      {
+        "teamId": "TEAM_FRONTEND",
+        "teamName": "Frontend Team",
+        "members": [
+          {
+            "memberId": "M010",
+            "memberName": "John Lim",
+            "position": "Frontend Lead"
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "projectId": "PRJ_MOBILE_APP",
+        "projectName": "Mobile Shopping App",
+        "status": "PLANNING",
+        "tasks": [
+          {
+            "taskId": "T010",
+            "taskName": "UX Research",
+            "assignee": "John Lim",
+            "dueDate": "2026-04-01"
+          }
+        ]
+      }
+    ],
+    "departments": [
+      {
+        "deptId": "DEPT_PRODUCT",
+        "deptName": "Product",
+        "budget": 1200000.00,
+        "employees": [
+          {
+            "empId": "E010",
+            "empName": "Sarah Wong",
+            "role": "Product Manager",
+            "salary": 130000.00
+          }
+        ]
+      }
+    ],
+    "offices": [
+      {
+        "officeId": "OFFICE_MY_KL",
+        "location": "Kuala Lumpur, Malaysia",
+        "capacity": 180,
+        "facilities": [
+          {
+            "facilityId": "FAC_GYM_01",
+            "facilityName": "Gym",
+            "quantity": 1,
+            "available": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "orgId": "ORG_AI_LABS_GLOBAL",
+    "orgName": "Global AI Labs",
+    "teams": [
+      {
+        "teamId": "TEAM_AI_RESEARCH",
+        "teamName": "AI Research",
+        "members": [
+          {
+            "memberId": "M020",
+            "memberName": "David Chen",
+            "position": "Research Scientist"
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "projectId": "PRJ_LLM_PLATFORM",
+        "projectName": "Enterprise LLM Platform",
+        "status": "ACTIVE",
+        "tasks": [
+          {
+            "taskId": "T020",
+            "taskName": "Model Training",
+            "assignee": "David Chen",
+            "dueDate": "2026-05-30"
+          }
+        ]
+      }
+    ],
+    "departments": [
+      {
+        "deptId": "DEPT_AI_RESEARCH",
+        "deptName": "AI Research",
+        "budget": 5000000.00,
+        "employees": [
+          {
+            "empId": "E020",
+            "empName": "David Chen",
+            "role": "Senior Scientist",
+            "salary": 200000.00
+          }
+        ]
+      }
+    ],
+    "offices": [
+      {
+        "officeId": "OFFICE_US_SF",
+        "location": "San Francisco, USA",
+        "capacity": 300,
+        "facilities": [
+          {
+            "facilityId": "FAC_LAB_01",
+            "facilityName": "AI Lab",
+            "quantity": 2,
+            "available": true
+          }
+        ]
+      }
+    ]
+  }
+]
