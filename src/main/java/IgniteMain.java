@@ -52,18 +52,7 @@ public class IgniteMain {
                 .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
                 .getOrCreate();
 
-//        var query = "(SELECT CAST(id AS VARCHAR) AS id, * FROM Teamsref) as tmp";
 
-//        Dataset<Row> df = sparkSession.read()
-//                .format("jdbc")
-//                .option("url", "jdbc:ignite:thin://localhost:10800")
-//                .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
-//                .option("dbtable", "Teamsref")
-//                .option("fetchSize", "100000")
-//                .option("customSchema", "id STRING")
-//                .load();
-//
-//        df.show();
 
 
         Dataset<Row> teamsDf = sparkSession.readStream()
@@ -76,12 +65,6 @@ public class IgniteMain {
 
 
         teamsDf.printSchema();
-        String referenceData = "src/main/resources/csv/reference.csv";
-        Dataset<Row> refData = sparkSession
-                .read()
-                .option("header", "true")
-                .format("csv")
-                .load(referenceData);
 
 
         teamsDf.writeStream()
@@ -103,37 +86,6 @@ public class IgniteMain {
 
                     memberIds = memberIds.select(explode(col("extracted_teamId")).as("extracted_teamId"));
 
-                    List<String> memberList = new ArrayList<>();
-                    List<Row> memberIdList = memberIds.collectAsList();
-                    for (Row row : memberIdList) {
-                        memberList.add(row.getString(0));
-                    }
-                    String memberIdsString = String.join("','", memberList);
-
-
-                    String query = "select teamId,teamName from Teamsref where teamId in ('" + memberIdsString + "')";
-
-                    System.out.printf("QUERY:::: %s", query);
-                    Dataset<Row> teamsRef = sparkSession.read()
-                            .format("jdbc")
-                            .option("url", "jdbc:ignite:thin://localhost:10800")
-                            .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
-//                            .option("dbtable", "Teamsref")
-                            .option("fetchSize", "100000")
-                            .option("query", query)
-                            .load();
-                    teamsRef.show();
-
-                    Dataset<Row> teamsLookupDs = teamsRef
-                            .select(struct(col("teamId"), col("TEAMNAME")).as("entry"))
-                            .agg(collect_list("entry").as("entries"))
-                            .select(map_from_entries(col("entries")).as("teams_lookup"));
-
-                    teamsLookupDs.printSchema();
-                    teamsLookupDs.show(false);
-
-
-                    // project id enrichment
 
                     Dataset<Row> projectIds = batch.withColumn("extracted_projectId",
                             transform(col("projects"), team ->
@@ -143,12 +95,9 @@ public class IgniteMain {
                             )
                     ).select("extracted_projectId");
 
-
-                    projectIds.printSchema();
-                    projectIds.show(false);
-
-
                     projectIds = projectIds.select(explode(col("extracted_projectId")).as("extracted_projectId"));
+
+                    projectIds.show();
 
                     List<String> projectList = new ArrayList<>();
                     List<Row> projectIdList = projectIds.collectAsList();
@@ -158,29 +107,6 @@ public class IgniteMain {
                     String projectIdString = String.join("','", projectList);
 
 
-                    String projectIdQuery = "select PROJECTID,PROJECTNAME from Teamsref where PROJECTID in ('" + projectIdString + "')";
-
-                    System.out.printf("QUERY:::: %s", projectIdQuery);
-                    Dataset<Row> projectRefs = sparkSession.read()
-                            .format("jdbc")
-                            .option("url", "jdbc:ignite:thin://localhost:10800")
-                            .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
-//                            .option("dbtable", "Teamsref")
-                            .option("fetchSize", "100000")
-                            .option("query", projectIdQuery)
-                            .load();
-
-
-                    Dataset<Row> projectLookupDs = projectRefs
-                            .select(struct(col("PROJECTID"), col("PROJECTNAME")).as("entry"))
-                            .agg(collect_list("entry").as("entries"))
-                            .select(map_from_entries(col("entries")).as("projects_lookup"));
-
-                    teamsLookupDs.printSchema();
-                    teamsLookupDs.show(false);
-
-
-                    // department enrichment
                     Dataset<Row> departmentIds = batch.withColumn("extracted_departmentIds",
                             transform(col("departments"), team ->
 
@@ -204,23 +130,44 @@ public class IgniteMain {
                     String departmentString = String.join("','", departmentList);
 
 
-                    String departmentQuery = "select DEPTID,DEPTNAME from Teamsref where DEPTID in ('" + departmentString + "')";
 
-                    System.out.printf("QUERY:::: %s", departmentQuery);
-                    Dataset<Row> departmentRef = sparkSession.read()
+                    List<String> memberList = new ArrayList<>();
+                    List<Row> memberIdList = memberIds.collectAsList();
+                    for (Row row : memberIdList) {
+                        memberList.add(row.getString(0));
+                    }
+                    String memberIdsString = String.join("','", memberList);
+
+
+                    String query = "select teamId,teamName,PROJECTID,PROJECTNAME,DEPTID,DEPTNAME " +
+                            "from Teamsref where teamId in ('" + memberIdsString + "') OR " +
+                            "PROJECTID in ('" + projectIdString + "') OR  DEPTID in ('"+departmentString+"')";
+
+                    System.out.printf("QUERY:::: %s", query);
+                    Dataset<Row> teamsRef = sparkSession.read()
                             .format("jdbc")
                             .option("url", "jdbc:ignite:thin://localhost:10800")
                             .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
-//                            .option("dbtable", "Teamsref")
                             .option("fetchSize", "100000")
-                            .option("query", departmentQuery)
+                            .option("query", query)
                             .load();
+                    teamsRef.show();
 
-
-                    Dataset<Row> departmentLookupDs = departmentRef
-                            .select(struct(col("DEPTID"), col("DEPTNAME")).as("entry"))
-                            .agg(collect_list("entry").as("entries"))
-                            .select(map_from_entries(col("entries")).as("departments_lookup"));
+                    Dataset<Row> teamsLookupDs = teamsRef.
+                            select(
+                                    map_from_arrays(
+                                            collect_list(col("teamId")),
+                                            collect_list(col("teamName"))
+                                    ).as("teams_lookup"),
+                                    map_from_arrays(
+                                            collect_list(col("projectId")),
+                                            collect_list(col("projectName"))
+                                    ).as("project_lookup"),
+                                    map_from_arrays(
+                                            collect_list(col("DEPTID")),
+                                            collect_list(col("DEPTNAME"))
+                                    ).as("departments_lookup")
+                            );
 
                     teamsLookupDs.printSchema();
                     teamsLookupDs.show(false);
@@ -231,10 +178,7 @@ public class IgniteMain {
 // 2. Attach this single map to every row in your main batch
 // Because lookupDS only has ONE row, this cross join does NOT duplicate rows
                     Dataset<Row> joinedBatch = batch
-                            .crossJoin(broadcast(teamsLookupDs))
-                            .crossJoin(broadcast(projectLookupDs))
-                            .crossJoin(departmentLookupDs);
-
+                            .crossJoin(broadcast(teamsLookupDs));
 
 // 3. Perform the lookup inside your existing transform logic
                     Dataset<Row> result = joinedBatch.withColumn("teams",
@@ -253,7 +197,7 @@ public class IgniteMain {
                             .withColumn("projects",
                                     transform(col("projects"), project -> {
                                         // Look up values directly from the attached map column
-                                        Column foundName = coalesce(element_at(col("projects_lookup"), project.getField("projectId")), lit("project"));
+                                        Column foundName = coalesce(element_at(col("project_lookup"), project.getField("projectId")), lit("project"));
 
                                         return project.withField("tasks",
                                                 transform(project.getField("tasks"), member ->
@@ -293,89 +237,6 @@ public class IgniteMain {
                 })
                 .start()
                 .awaitTermination();
-
-        // enrich teams with team ids
-
-
-        /*
-        Dataset<Row> memberIds = teamsDf.withColumn("extracted_ids",
-                transform(col("teams"), team ->
-                        transform(team.getField("members"), member ->
-                                member.getField("memberId")
-                        )
-                )
-        ).select("extracted_ids");
-
-        memberIds = memberIds.select(explode(col("extracted_ids")).as("extracted_ids"));
-        memberIds = memberIds.select(explode(col("extracted_ids")).as("extracted_ids"));
-
-
-        memberIds.printSchema();
-
-
-
-
-//        Dataset<Row> teamsRef = sparkSession.read()
-//                .format("jdbc")
-//                .option("url", "jdbc:ignite:thin://localhost:10800")
-//                .option("driver", "org.apache.ignite.jdbc.IgniteJdbcDriver")
-//                .option("dbtable", "Teamsref")
-//                .option("fetchSize", "100000")
-////                .option("query", )
-//                .load();
-//        teamsRef.show();
-
-
-        teamsDf = teamsDf.withColumn("teams", transform(
-                col("teams"), (column) -> {
-
-
-
-                    return column.withField("ENRICHED", struct(lit("temp").as("temp")));
-                }
-
-        ));
-
-         */
-
-
-        /*
-        StreamingQuery query = teamsRef
-                .writeStream()
-                .format("console")
-                .option("truncate", "false")
-                .outputMode(OutputMode.Append())
-                .start();
-
-
-
-
-        query.awaitTermination();
-
-
-         */
-
-
-        /*
-         batch.select("teams").toLocalIterator().forEachRemaining(e -> {
-                        // Convert Scala Seq to a mutable Java List
-                        java.util.List<Object> list = new java.util.ArrayList<>(
-                                JavaConverters.seqAsJavaList(e.toSeq())
-                        );
-
-                        // Add your string easily
-
-                        list.add("Your String Value");
-
-
-                        // Convert back to Scala Seq if your downstream code requires it
-                        scala.collection.immutable.Seq<Object> updatedSeq =
-                                JavaConverters.asScalaBuffer(list).toSeq();
-
-                        System.out.println(updatedSeq);
-                    });
-
-         */
     }
 
 
