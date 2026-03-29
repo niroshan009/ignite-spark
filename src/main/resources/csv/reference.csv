@@ -1,101 +1,409 @@
 orgId,orgName,teamId,teamName,projectId,projectName,deptId,deptName,officeId,loc
-ORG_FINTECH_SG,Organization_001,TEAM_PLATFORM,Team_001,PRJ_001,Project_001,DEPT_001,Department_001,OFFICE_001,Location_001
-ORG_FINTECH_SG,Organization_002,TEAM_DATA,Team_002,PRJ_002,Project_002,DEPT_002,Department_002,OFFICE_002,Location_002
-ORG_FINTECH_SG,Organization_003,TEAM_003,Team_003,PRJ_PAYMENT_GATEWAY,Project_003,DEPT_003,Department_003,OFFICE_003,Location_003
-ORG_FINTECH_SG,Organization_004,TEAM_004,Team_004,PRJ_004,Project_004,DEPT_ENGINEERING,Department_004,OFFICE_004,Location_004
-ORG_FINTECH_SG,Organization_005,TEAM_005,Team_005,PRJ_005,Project_005,DEPT_005,Department_005,OFFICE_SG_MARINA,Location_005
-ORG_FINTECH_SG,Organization_006,TEAM_006,Team_006,PRJ_006,Project_006,DEPT_006,Department_006,OFFICE_006,Location_006
-ORG_ECOMMERCE_APAC,Organization_007,TEAM_FRONTEND,Team_007,PRJ_007,Project_007,DEPT_007,Department_007,OFFICE_007,Location_007
-ORG_ECOMMERCE_APAC,Organization_008,TEAM_008,Team_008,PRJ_MOBILE_APP,Project_008,DEPT_008,Department_008,OFFICE_008,Location_008
-ORG_ECOMMERCE_APAC,Organization_009,TEAM_009,Team_009,PRJ_009,Project_009,DEPT_PRODUCT,Department_009,OFFICE_009,Location_009
-ORG_ECOMMERCE_APAC,Organization_010,TEAM_010,Team_010,PRJ_010,Project_010,DEPT_010,Department_010,OFFICE_MY_KL,Location_010
-ORG_AI_LABS_GLOBAL,Organization_011,TEAM_AI_RESEARCH,Team_011,PRJ_011,Project_011,DEPT_011,Department_011,OFFICE_011,Location_011
-ORG_AI_LABS_GLOBAL,Organization_012,TEAM_012,Team_012,PRJ_LLM_PLATFORM,Project_012,DEPT_012,Department_012,OFFICE_012,Location_012
-ORG_AI_LABS_GLOBAL,Organization_013,TEAM_013,Team_013,PRJ_013,Project_013,DEPT_AI_RESEARCH,Department_013,OFFICE_013,Location_013
-ORG_AI_LABS_GLOBAL,Organization_014,TEAM_014,Team_014,PRJ_014,Project_014,DEPT_014,Department_014,OFFICE_US_SF,Location_014
-ORG_AI_LABS_GLOBAL,Organization_015,TEAM_015,Team_015,PRJ_015,Project_015,DEPT_015,Department_015,OFFICE_015,Location_015
-ORG_AI_LABS_GLOBAL,Organization_016,TEAM_016,Team_016,PRJ_016,Project_016,DEPT_016,Department_016,OFFICE_016,Location_016
-ORG_017,Organization_017,TEAM_017,Team_017,PRJ_017,Project_017,DEPT_017,Department_017,OFFICE_017,Location_017
-ORG_018,Organization_018,TEAM_018,Team_018,PRJ_018,Project_018,DEPT_018,Department_018,OFFICE_018,Location_018
-ORG_019,Organization_019,TEAM_019,Team_019,PRJ_019,Project_019,DEPT_019,Department_019,OFFICE_019,Location_019
-ORG_020,Organization_020,TEAM_020,Team_020,PRJ_020,Project_020,DEPT_020,Department_020,OFFICE_020,Location_020
-ORG_021,Organization_021,TEAM_021,Team_021,PRJ_021,Project_021,DEPT_021,Department_021,OFFICE_021,Location_021
-ORG_022,Organization_022,TEAM_022,Team_022,PRJ_022,Project_022,DEPT_022,Department_022,OFFICE_022,Location_022
-ORG_023,Organization_023,TEAM_023,Team_023,PRJ_023,Project_023,DEPT_023,Department_023,OFFICE_023,Location_023
-ORG_024,Organization_024,TEAM_024,Team_024,PRJ_024,Project_024,DEPT_024,Department_024,OFFICE_024,Location_024
-ORG_025,Organization_025,TEAM_025,Team_025,PRJ_025,Project_025,DEPT_025,Department_025,OFFICE_025,Location_025
-ORG_026,Organization_026,TEAM_026,Team_026,PRJ_026,Project_026,DEPT_026,Department_026,OFFICE_026,Location_026
-ORG_027,Organization_027,TEAM_027,Team_027,PRJ_027,Project_027,DEPT_027,Department_027,OFFICE_027,Location_027
-ORG_028,Organization_028,TEAM_028,Team_028,PRJ_028,Project_028,DEPT_028,Department_028,OFFICE_028,Location_028
-ORG_029,Organization_029,TEAM_029,Team_029,PRJ_029,Project_029,DEPT_029,Department_029,OFFICE_029,Location_029
-ORG_030,Organization_030,TEAM_030,Team_030,PRJ_030,Project_030,DEPT_030,Department_030,OFFICE_030,Location_030
-ORG_031,Organization_031,TEAM_031,Team_031,PRJ_031,Project_031,DEPT_031,Department_031,OFFICE_031,Location_031
-ORG_032,Organization_032,TEAM_032,Team_032,PRJ_032,Project_032,DEPT_032,Department_032,OFFICE_032,Location_032
-ORG_033,Organization_033,TEAM_033,Team_033,PRJ_033,Project_033,DEPT_033,Department_033,OFFICE_033,Location_033
-ORG_034,Organization_034,TEAM_034,Team_034,PRJ_034,Project_034,DEPT_034,Department_034,OFFICE_034,Location_034
-ORG_035,Organization_035,TEAM_035,Team_035,PRJ_035,Project_035,DEPT_035,Department_035,OFFICE_035,Location_035
-ORG_036,Organization_036,TEAM_036,Team_036,PRJ_036,Project_036,DEPT_036,Department_036,OFFICE_036,Location_036
-ORG_037,Organization_037,TEAM_037,Team_037,PRJ_037,Project_037,DEPT_037,Department_037,OFFICE_037,Location_037
-ORG_038,Organization_038,TEAM_038,Team_038,PRJ_038,Project_038,DEPT_038,Department_038,OFFICE_038,Location_038
-ORG_039,Organization_039,TEAM_039,Team_039,PRJ_039,Project_039,DEPT_039,Department_039,OFFICE_039,Location_039
-ORG_040,Organization_040,TEAM_040,Team_040,PRJ_040,Project_040,DEPT_040,Department_040,OFFICE_040,Location_040
-ORG_041,Organization_041,TEAM_041,Team_041,PRJ_041,Project_041,DEPT_041,Department_041,OFFICE_041,Location_041
-ORG_042,Organization_042,TEAM_042,Team_042,PRJ_042,Project_042,DEPT_042,Department_042,OFFICE_042,Location_042
-ORG_043,Organization_043,TEAM_043,Team_043,PRJ_043,Project_043,DEPT_043,Department_043,OFFICE_043,Location_043
-ORG_044,Organization_044,TEAM_044,Team_044,PRJ_044,Project_044,DEPT_044,Department_044,OFFICE_044,Location_044
-ORG_045,Organization_045,TEAM_045,Team_045,PRJ_045,Project_045,DEPT_045,Department_045,OFFICE_045,Location_045
-ORG_046,Organization_046,TEAM_046,Team_046,PRJ_046,Project_046,DEPT_046,Department_046,OFFICE_046,Location_046
-ORG_047,Organization_047,TEAM_047,Team_047,PRJ_047,Project_047,DEPT_047,Department_047,OFFICE_047,Location_047
-ORG_048,Organization_048,TEAM_048,Team_048,PRJ_048,Project_048,DEPT_048,Department_048,OFFICE_048,Location_048
-ORG_049,Organization_049,TEAM_049,Team_049,PRJ_049,Project_049,DEPT_049,Department_049,OFFICE_049,Location_049
-ORG_050,Organization_050,TEAM_050,Team_050,PRJ_050,Project_050,DEPT_050,Department_050,OFFICE_050,Location_050
-ORG_051,Organization_051,TEAM_051,Team_051,PRJ_051,Project_051,DEPT_051,Department_051,OFFICE_051,Location_051
-ORG_052,Organization_052,TEAM_052,Team_052,PRJ_052,Project_052,DEPT_052,Department_052,OFFICE_052,Location_052
-ORG_053,Organization_053,TEAM_053,Team_053,PRJ_053,Project_053,DEPT_053,Department_053,OFFICE_053,Location_053
-ORG_054,Organization_054,TEAM_054,Team_054,PRJ_054,Project_054,DEPT_054,Department_054,OFFICE_054,Location_054
-ORG_055,Organization_055,TEAM_055,Team_055,PRJ_055,Project_055,DEPT_055,Department_055,OFFICE_055,Location_055
-ORG_056,Organization_056,TEAM_056,Team_056,PRJ_056,Project_056,DEPT_056,Department_056,OFFICE_056,Location_056
-ORG_057,Organization_057,TEAM_057,Team_057,PRJ_057,Project_057,DEPT_057,Department_057,OFFICE_057,Location_057
-ORG_058,Organization_058,TEAM_058,Team_058,PRJ_058,Project_058,DEPT_058,Department_058,OFFICE_058,Location_058
-ORG_059,Organization_059,TEAM_059,Team_059,PRJ_059,Project_059,DEPT_059,Department_059,OFFICE_059,Location_059
-ORG_060,Organization_060,TEAM_060,Team_060,PRJ_060,Project_060,DEPT_060,Department_060,OFFICE_060,Location_060
-ORG_061,Organization_061,TEAM_061,Team_061,PRJ_061,Project_061,DEPT_061,Department_061,OFFICE_061,Location_061
-ORG_062,Organization_062,TEAM_062,Team_062,PRJ_062,Project_062,DEPT_062,Department_062,OFFICE_062,Location_062
-ORG_063,Organization_063,TEAM_063,Team_063,PRJ_063,Project_063,DEPT_063,Department_063,OFFICE_063,Location_063
-ORG_064,Organization_064,TEAM_064,Team_064,PRJ_064,Project_064,DEPT_064,Department_064,OFFICE_064,Location_064
-ORG_065,Organization_065,TEAM_065,Team_065,PRJ_065,Project_065,DEPT_065,Department_065,OFFICE_065,Location_065
-ORG_066,Organization_066,TEAM_066,Team_066,PRJ_066,Project_066,DEPT_066,Department_066,OFFICE_066,Location_066
-ORG_067,Organization_067,TEAM_067,Team_067,PRJ_067,Project_067,DEPT_067,Department_067,OFFICE_067,Location_067
-ORG_068,Organization_068,TEAM_068,Team_068,PRJ_068,Project_068,DEPT_068,Department_068,OFFICE_068,Location_068
-ORG_069,Organization_069,TEAM_069,Team_069,PRJ_069,Project_069,DEPT_069,Department_069,OFFICE_069,Location_069
-ORG_070,Organization_070,TEAM_070,Team_070,PRJ_070,Project_070,DEPT_070,Department_070,OFFICE_070,Location_070
-ORG_071,Organization_071,TEAM_071,Team_071,PRJ_071,Project_071,DEPT_071,Department_071,OFFICE_071,Location_071
-ORG_072,Organization_072,TEAM_072,Team_072,PRJ_072,Project_072,DEPT_072,Department_072,OFFICE_072,Location_072
-ORG_073,Organization_073,TEAM_073,Team_073,PRJ_073,Project_073,DEPT_073,Department_073,OFFICE_073,Location_073
-ORG_074,Organization_074,TEAM_074,Team_074,PRJ_074,Project_074,DEPT_074,Department_074,OFFICE_074,Location_074
-ORG_075,Organization_075,TEAM_075,Team_075,PRJ_075,Project_075,DEPT_075,Department_075,OFFICE_075,Location_075
-ORG_076,Organization_076,TEAM_076,Team_076,PRJ_076,Project_076,DEPT_076,Department_076,OFFICE_076,Location_076
-ORG_077,Organization_077,TEAM_077,Team_077,PRJ_077,Project_077,DEPT_077,Department_077,OFFICE_077,Location_077
-ORG_078,Organization_078,TEAM_078,Team_078,PRJ_078,Project_078,DEPT_078,Department_078,OFFICE_078,Location_078
-ORG_079,Organization_079,TEAM_079,Team_079,PRJ_079,Project_079,DEPT_079,Department_079,OFFICE_079,Location_079
-ORG_080,Organization_080,TEAM_080,Team_080,PRJ_080,Project_080,DEPT_080,Department_080,OFFICE_080,Location_080
-ORG_081,Organization_081,TEAM_081,Team_081,PRJ_081,Project_081,DEPT_081,Department_081,OFFICE_081,Location_081
-ORG_082,Organization_082,TEAM_082,Team_082,PRJ_082,Project_082,DEPT_082,Department_082,OFFICE_082,Location_082
-ORG_083,Organization_083,TEAM_083,Team_083,PRJ_083,Project_083,DEPT_083,Department_083,OFFICE_083,Location_083
-ORG_084,Organization_084,TEAM_084,Team_084,PRJ_084,Project_084,DEPT_084,Department_084,OFFICE_084,Location_084
-ORG_085,Organization_085,TEAM_085,Team_085,PRJ_085,Project_085,DEPT_085,Department_085,OFFICE_085,Location_085
-ORG_086,Organization_086,TEAM_086,Team_086,PRJ_086,Project_086,DEPT_086,Department_086,OFFICE_086,Location_086
-ORG_087,Organization_087,TEAM_087,Team_087,PRJ_087,Project_087,DEPT_087,Department_087,OFFICE_087,Location_087
-ORG_088,Organization_088,TEAM_088,Team_088,PRJ_088,Project_088,DEPT_088,Department_088,OFFICE_088,Location_088
-ORG_089,Organization_089,TEAM_089,Team_089,PRJ_089,Project_089,DEPT_089,Department_089,OFFICE_089,Location_089
-ORG_090,Organization_090,TEAM_090,Team_090,PRJ_090,Project_090,DEPT_090,Department_090,OFFICE_090,Location_090
-ORG_091,Organization_091,TEAM_091,Team_091,PRJ_091,Project_091,DEPT_091,Department_091,OFFICE_091,Location_091
-ORG_092,Organization_092,TEAM_092,Team_092,PRJ_092,Project_092,DEPT_092,Department_092,OFFICE_092,Location_092
-ORG_093,Organization_093,TEAM_093,Team_093,PRJ_093,Project_093,DEPT_093,Department_093,OFFICE_093,Location_093
-ORG_094,Organization_094,TEAM_094,Team_094,PRJ_094,Project_094,DEPT_094,Department_094,OFFICE_094,Location_094
-ORG_095,Organization_095,TEAM_095,Team_095,PRJ_095,Project_095,DEPT_095,Department_095,OFFICE_095,Location_095
-ORG_096,Organization_096,TEAM_096,Team_096,PRJ_096,Project_096,DEPT_096,Department_096,OFFICE_096,Location_096
-ORG_097,Organization_097,TEAM_097,Team_097,PRJ_097,Project_097,DEPT_097,Department_097,OFFICE_097,Location_097
-ORG_098,Organization_098,TEAM_098,Team_098,PRJ_098,Project_098,DEPT_098,Department_098,OFFICE_098,Location_098
-ORG_099,Organization_099,TEAM_099,Team_099,PRJ_099,Project_099,DEPT_099,Department_099,OFFICE_099,Location_099
-ORG_100,Organization_100,TEAM_100,Team_100,PRJ_100,Project_100,DEPT_100,Department_100,OFFICE_100,Location_100
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000001,Organization_0001,TEAM_DESIGN,Ref_Design,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_FINANCE,Ref_Finance,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000002,Organization_0002,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_FINANCE,Ref_Finance,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_DESIGN,Ref_Design,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_LEGAL,Ref_Legal,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_US_SF,"San Francisco, USA"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000003,Organization_0003,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_SALES,Ref_Sales,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_HR,Ref_Hr,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_HR,Ref_Hr,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_PRODUCT,Ref_Product,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_HR,Ref_Hr,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_HR,Ref_Hr,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000004,Organization_0004,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_HR,Ref_Hr,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_ERP,Ref_Erp,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_ERP,Ref_Erp,DEPT_HR,Ref_Hr,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_ERP,Ref_Erp,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_ERP,Ref_Erp,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_ERP,Ref_Erp,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_QA,Ref_Qa,PRJ_ERP,Ref_Erp,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_HR,Ref_Hr,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_DATA_WAREHOUSE,Ref_Data,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_HR,Ref_Hr,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_HR,Ref_Hr,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_HR,Ref_Hr,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000005,Organization_0005,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_MOBILE_APP,Ref_Mobile,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_MOBILE_APP,Ref_Mobile,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_MOBILE_APP,Ref_Mobile,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000006,Organization_0006,TEAM_SECURITY,Ref_Security,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_DATA,Ref_Data,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_PLATFORM,Ref_Platform,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_MOBILE_APP,Ref_Mobile,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000007,Organization_0007,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_LLM_PLATFORM,Ref_Llm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_ML_ENGINEERING,Ref_Ml,PRJ_ERP,Ref_Erp,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_CRM_SYSTEM,Ref_Crm,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_ENGINEERING,Ref_Engineering,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_ENGINEERING,Ref_Engineering,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_ENGINEERING,Ref_Engineering,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000008,Organization_0008,TEAM_DATA,Ref_Data,PRJ_ERP,Ref_Erp,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_DATA,Ref_Data,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_MOBILE_APP,Ref_Mobile,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_UK_LON,"London, United Kingdom"
+ORG_000009,Organization_0009,TEAM_AI_RESEARCH,Ref_Ai,PRJ_MOBILE_APP,Ref_Mobile,DEPT_MARKETING,Ref_Marketing,OFFICE_MY_KL,"Kuala Lumpur, Malaysia"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_AI_RESEARCH,Ref_Ai,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_PAYMENT_GATEWAY,Ref_Payment,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_CUSTOMER_PORTAL,Ref_Customer,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_PRODUCT,Ref_Product,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_MARKETING,Ref_Marketing,OFFICE_US_SF,"San Francisco, USA"
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_SG_MARINA,Singapore - Marina Bay
+ORG_000010,Organization_0010,TEAM_DEVOPS,Ref_Devops,PRJ_INVENTORY_MGMT,Ref_Inventory,DEPT_AI_RESEARCH,Ref_Ai,OFFICE_US_SF,"San Francisco, USA"
