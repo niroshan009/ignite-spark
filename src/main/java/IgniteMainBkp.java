@@ -1,7 +1,6 @@
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.api.java.function.MapPartitionsFunction;
-import org.apache.spark.package$;
 import org.apache.spark.sql.*;
 import org.apache.spark.sql.avro.SchemaConverters;
 import org.apache.spark.sql.catalyst.encoders.RowEncoder;
@@ -58,9 +57,9 @@ public class IgniteMainBkp {
         originalTemas.writeStream()
                 .foreachBatch((Dataset<Row> teamsDf, Long batchId) -> {
 
+                    int optimalPartitions = 40;
 
-
-                    teamsDf = teamsDf.repartition(30).mapPartitions((MapPartitionsFunction<Row, Row>) it -> {
+                    teamsDf = teamsDf.repartition(optimalPartitions).mapPartitions((MapPartitionsFunction<Row, Row>) it -> {
 
                         List<Row> originalRows = new ArrayList<>();
 
@@ -105,13 +104,13 @@ public class IgniteMainBkp {
                             System.out.println("\nquery executed");
 
                             try (ResultSet rs = st.executeQuery()) {
-                                System.out.println("size of the ref"+ rs.getFetchSize());
+                                System.out.println("size of the ref" + rs.getFetchSize());
                                 while (rs.next()) {
                                     teamRef.put(rs.getString("teamId"), rs.getString("teamName"));
                                     departmentRef.put(rs.getString("DEPTID"), rs.getString("DEPTNAME"));
                                     projectRef.put(rs.getString("PROJECTID"), rs.getString("PROJECTNAME"));
                                 }
-                            }catch (Exception e) {
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
@@ -148,7 +147,7 @@ public class IgniteMainBkp {
                                     var memberName = teamStruct.getString(teamStruct.fieldIndex("memberId"));
                                     var memberId = teamStruct.getString(teamStruct.fieldIndex("memberName"));
                                     var memberPosition = teamStruct.getString(teamStruct.fieldIndex("position"));
-                                    var memberTeam = teamRef.getOrDefault(teamId,"NOT_FOUND");
+                                    var memberTeam = teamRef.getOrDefault(teamId, "NOT_FOUND");
                                     return RowFactory.create(memberId, memberName, memberPosition, memberTeam);
                                 }).collect(Collectors.toList());
                                 return RowFactory.create(teamId, teamName, JavaConverters.asScalaBufferConverter(enrichedTeams).asScala().toSeq());
@@ -215,22 +214,18 @@ public class IgniteMainBkp {
                     }, RowEncoder.apply((StructType) SchemaConverters.toSqlType(enrichedTeamsSchema).dataType()));
 
 
-
                     teamsDf.printSchema();
 
 
                     teamsDf.explain("cost");
 
-                    teamsDf.show(Integer.MAX_VALUE,false);
+                    teamsDf.show(Integer.MAX_VALUE, false);
 
 
                     teamsDf
-                            .repartition(10)
                             .write()
                             .format("console")
                             .option("truncate", "false");
-
-
 
 
                 })
