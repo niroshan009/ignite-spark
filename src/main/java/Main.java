@@ -19,7 +19,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
 
-public class IgniteMainBkp {
+public class Main {
 
     public static void main(String[] args) throws IOException, StreamingQueryException, TimeoutException, SQLException {
         Logger.getLogger("org.apache").setLevel(Level.WARN);
