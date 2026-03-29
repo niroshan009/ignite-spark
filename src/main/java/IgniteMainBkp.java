@@ -41,8 +41,6 @@ public class IgniteMainBkp {
 
         Dataset<Row> teamsDf = sparkSession.readStream()
                 .format("iceberg")
-                // .option("stream-from-timestamp", String.valueOf(streamStartTimestamp)) // Start from a specific time
-                // Optional: ignore overwrite or delete snapshots to prevent job failure
                 .option("streaming-skip-overwrite-snapshots", "true")
                 .option("streaming-skip-delete-snapshots", "true")
                 .load("db.teams");
@@ -107,24 +105,19 @@ public class IgniteMainBkp {
                 ex.printStackTrace();
             }
 
-
             List<Row> enriched = new ArrayList<>();
 
             var orgId = "";
             var orgName = "";
 
-            Struct newSchema;
-
-
             for (Row row : originalRows) {
-                List<Row> offices = new ArrayList<>();
+                List<Row> offices = row.getList(row.fieldIndex("offices"));
                 List<Row> enrichedTeamsRows = new ArrayList<>();
                 List<Row> enrichedProjectRows = new ArrayList<>();
                 List<Row> enrichedDepartmentRows = new ArrayList<>();
 
                 orgId = row.getString(row.fieldIndex("orgId"));
                 orgName = row.getString(row.fieldIndex("orgName"));
-                offices = row.getList(row.fieldIndex("offices"));
 
 
                 // START ENRICH TEAM ROWS
@@ -134,7 +127,9 @@ public class IgniteMainBkp {
                 enrichedTeamsRows.addAll(teamsRows.stream().map(teamRow -> {
                     var teamId = teamRow.getString(teamRow.fieldIndex("teamId"));
                     var teamName = teamRow.getString(teamRow.fieldIndex("teamName"));
+
                     List<Row> teams = teamRow.getList(teamRow.fieldIndex("members"));
+
                     List<Row> enrichedTeams = teams.stream().map(teamStruct -> {
                         var memberName = teamStruct.getString(teamStruct.fieldIndex("memberId"));
                         var memberId = teamStruct.getString(teamStruct.fieldIndex("memberName"));
@@ -155,7 +150,9 @@ public class IgniteMainBkp {
                     var projectId = projectRow.getString(projectRow.fieldIndex("projectId"));
                     var projectName = projectRow.getString(projectRow.fieldIndex("projectName"));
                     var status = projectRow.getString(projectRow.fieldIndex("status"));
+
                     List<Row> tasks = projectRow.getList(projectRow.fieldIndex("tasks"));
+
                     List<Row> enrichedTasks = tasks.stream().map(taskStruct -> {
                         var taskId = taskStruct.getString(taskStruct.fieldIndex("taskId"));
                         var taskName = taskStruct.getString(taskStruct.fieldIndex("taskName"));
@@ -178,7 +175,9 @@ public class IgniteMainBkp {
                     var deptId = departmentRow.getString(departmentRow.fieldIndex("deptId"));
                     var deptName = departmentRow.getString(departmentRow.fieldIndex("deptName"));
                     var budget = departmentRow.getDouble(departmentRow.fieldIndex("budget"));
+
                     List<Row> employees = departmentRow.getList(departmentRow.fieldIndex("employees"));
+
                     List<Row> enrichedEmployees = employees.stream().map(empStruct -> {
                         var empId = empStruct.getString(empStruct.fieldIndex("empId"));
                         var empName = empStruct.getString(empStruct.fieldIndex("empName"));
