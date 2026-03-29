@@ -175,6 +175,9 @@ public class IgniteMain {
 
 
 
+
+
+
 // 2. Attach this single map to every row in your main batch
 // Because lookupDS only has ONE row, this cross join does NOT duplicate rows
                     Dataset<Row> joinedBatch = batch

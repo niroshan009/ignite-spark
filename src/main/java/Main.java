@@ -101,10 +101,7 @@ public class Main {
                         try (Connection conn = DriverManager.getConnection(url)) {
                             PreparedStatement st = conn.prepareStatement(query);
 
-                            System.out.println("\nquery executed");
-
                             try (ResultSet rs = st.executeQuery()) {
-                                System.out.println("size of the ref" + rs.getFetchSize());
                                 while (rs.next()) {
                                     teamRef.put(rs.getString("teamId"), rs.getString("teamName"));
                                     departmentRef.put(rs.getString("DEPTID"), rs.getString("DEPTNAME"));
