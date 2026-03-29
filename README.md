@@ -1,30 +1,30 @@
 # ignite-spark
 
 Start ignite with docker compose
-Run below command to connect to the cluster
+Run below command to connect to the Ignite3 CLI where you can communicate with Ignite3 Cluster
 ```bash
 docker run --rm -it --network=host -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -v ./sql/:/opt/ignite/downloads/ apacheignite/ignite:3.1.0 cli
 ```
 
-connect to cluster from above container
+Once inside the container it will automatically connect to the Ignite cluster. If it does not run bellow command to connect to Ignite 3 clustter
 ```bash
 connect http://localhost:10300
 ```
 
-initialize the cluster
+initialize the cluster with below command
 ```bash
 cluster init --name=ignite3
 ```
 
-run below to switch to sql mode
+run below to enter to sql mode where you can execute sql queries
 ```bash
 sql
 ```
 
-reference table
+Create a reference table
 ```sql
-CREATE ZONE IF NOT EXISTS Chinook WITH replicas=2, storage_profiles='default';
-CREATE ZONE IF NOT EXISTS ChinookReplicated WITH replicas=3, partitions=25, storage_profiles='default';
+-- create zones to control how data is distributed and replicated
+CREATE ZONE IF NOT EXISTS TeamsRefReplicated WITH replicas=3, partitions=25, storage_profiles='default';
 
 CREATE TABLE Teamsref_v3(
     id UUID  DEFAULT rand_uuid(),
@@ -39,7 +39,7 @@ CREATE TABLE Teamsref_v3(
     officeId VARCHAR(200),
     loc VARCHAR(200),
     PRIMARY KEY(id)
-) zone ChinookReplicated;
+) zone TeamsRefReplicated;
 
 CREATE INDEX IF NOT EXISTS idx_orgId ON Teamsref_v3 (orgId);
 CREATE INDEX IF NOT EXISTS idx_teamId ON Teamsref_v3 (teamId);
