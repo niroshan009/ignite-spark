@@ -195,8 +195,6 @@ public class IgniteMainBkp {
                         JavaConverters.asScalaBufferConverter(enrichedProjectRows).asScala().toSeq(),
                         JavaConverters.asScalaBufferConverter(enrichedDepartmentRows).asScala().toSeq(),
                         JavaConverters.asScalaBufferConverter(offices).asScala().toSeq()));
-
-
             }
 
             return enriched.iterator();
