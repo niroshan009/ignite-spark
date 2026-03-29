@@ -6,7 +6,6 @@ import org.apache.spark.sql.avro.SchemaConverters;
 import org.apache.spark.sql.catalyst.encoders.RowEncoder;
 import org.apache.spark.sql.streaming.StreamingQueryException;
 import org.apache.spark.sql.streaming.Trigger;
-import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructType;
 import scala.collection.JavaConverters;
 import org.apache.avro.Schema;
@@ -77,21 +76,9 @@ public class IgniteMainBkp {
                 List<Row> projects = rowOf.getList(rowOf.fieldIndex("projects"));
                 List<Row> departments = rowOf.getList(rowOf.fieldIndex("departments"));
 
-
-                for (Row team : teams) {
-                    String teamId = team.getAs("teamId");
-                    teamIds.add(teamId);
-                }
-
-                for (Row prject : projects) {
-                    String projctId = prject.getAs("projectId");
-                    prjectIds.add(projctId);
-                }
-
-                for (Row department : departments) {
-                    String depatId = department.getAs("deptId");
-                    departmentIds.add(depatId);
-                }
+                teamIds.addAll(teams.stream().map(team ->  (String)team.getAs("teamId")).collect(Collectors.toList()));
+                prjectIds.addAll(projects.stream().map(prject -> (String)prject.getAs("projectId")).collect(Collectors.toList()));
+                departmentIds.addAll(departments.stream().map(department -> (String)department.getAs("deptId")).collect(Collectors.toList()));
             }
 
             String memberIdsString = String.join("','", teamIds);
@@ -148,30 +135,19 @@ public class IgniteMainBkp {
                 List<Row> teamsRows = row.getList(row.fieldIndex("teams"));
 
 
-                for (Row teamRow : teamsRows) {
-
+                enrichedTeamsRows.addAll(teamsRows.stream().map(teamRow -> {
                     var teamId = teamRow.getString(teamRow.fieldIndex("teamId"));
                     var teamName = teamRow.getString(teamRow.fieldIndex("teamName"));
-
                     List<Row> teams = teamRow.getList(teamRow.fieldIndex("members"));
-                    List<Row> enrichedTeams = new ArrayList<>();
-
-                    for (int i = 0; i < teams.size(); i++) {
-                        var teamStruct = teams.get(i);
-
+                    List<Row> enrichedTeams = teams.stream().map(teamStruct -> {
                         var memberName = teamStruct.getString(teamStruct.fieldIndex("memberId"));
                         var memberId = teamStruct.getString(teamStruct.fieldIndex("memberName"));
                         var memberPosition = teamStruct.getString(teamStruct.fieldIndex("position"));
                         var memberTeam = teamRef.get(teamId);
-
-                        enrichedTeams.add(RowFactory.create(memberId, memberName, memberPosition, memberTeam));
-                    }
-
-                    System.out.println("teams row");
-
-                    enrichedTeamsRows.add(RowFactory.create(teamId, teamName, JavaConverters.asScalaBufferConverter(enrichedTeams).asScala().toSeq()));
-
-                }
+                        return RowFactory.create(memberId, memberName, memberPosition, memberTeam);
+                    }).collect(Collectors.toList());
+                    return RowFactory.create(teamId, teamName, JavaConverters.asScalaBufferConverter(enrichedTeams).asScala().toSeq());
+                }).collect(Collectors.toList()));
 
                 // END ENRICH TEAM ROWS
 
@@ -179,32 +155,21 @@ public class IgniteMainBkp {
                 // START ENRICH PROJECT ROWS
                 List<Row> projectRows = row.getList(row.fieldIndex("projects"));
 
-                for (Row projectRow : projectRows) {
-
+                enrichedProjectRows.addAll(projectRows.stream().map(projectRow -> {
                     var projectId = projectRow.getString(projectRow.fieldIndex("projectId"));
                     var projectName = projectRow.getString(projectRow.fieldIndex("projectName"));
                     var status = projectRow.getString(projectRow.fieldIndex("status"));
-
                     List<Row> tasks = projectRow.getList(projectRow.fieldIndex("tasks"));
-                    List<Row> enrichedTeams = new ArrayList<>();
-
-                    for (int i = 0; i < tasks.size(); i++) {
-                        var taskStruct = tasks.get(i);
-
+                    List<Row> enrichedTasks = tasks.stream().map(taskStruct -> {
                         var taskId = taskStruct.getString(taskStruct.fieldIndex("taskId"));
                         var taskName = taskStruct.getString(taskStruct.fieldIndex("taskName"));
                         var assignee = taskStruct.getString(taskStruct.fieldIndex("assignee"));
                         var dueDate = taskStruct.getString(taskStruct.fieldIndex("dueDate"));
                         var project = projectRef.get(projectId);
-
-                        enrichedTeams.add(RowFactory.create(taskId, taskName, assignee, dueDate, project));
-                    }
-
-                    System.out.println("tasks row");
-
-                    enrichedProjectRows.add(RowFactory.create(projectId, projectName, status, JavaConverters.asScalaBufferConverter(enrichedTeams).asScala().toSeq()));
-
-                }
+                        return RowFactory.create(taskId, taskName, assignee, dueDate, project);
+                    }).collect(Collectors.toList());
+                    return RowFactory.create(projectId, projectName, status, JavaConverters.asScalaBufferConverter(enrichedTasks).asScala().toSeq());
+                }).collect(Collectors.toList()));
 
 
                 // END PROJECT ROWS
@@ -213,32 +178,21 @@ public class IgniteMainBkp {
                 // START DEPARTMENT ROWS
                 List<Row> departmentsRows = row.getList(row.fieldIndex("departments"));
 
-                for (Row departmentRow : departmentsRows) {
-
+                enrichedDepartmentRows.addAll(departmentsRows.stream().map(departmentRow -> {
                     var deptId = departmentRow.getString(departmentRow.fieldIndex("deptId"));
                     var deptName = departmentRow.getString(departmentRow.fieldIndex("deptName"));
                     var budget = departmentRow.getDouble(departmentRow.fieldIndex("budget"));
-
                     List<Row> employees = departmentRow.getList(departmentRow.fieldIndex("employees"));
-                    List<Row> enrichedEmployees = new ArrayList<>();
-
-                    for (int i = 0; i < employees.size(); i++) {
-                        var taskStruct = employees.get(i);
-
-                        var empId = taskStruct.getString(taskStruct.fieldIndex("empId"));
-                        var empName = taskStruct.getString(taskStruct.fieldIndex("empName"));
-                        var role = taskStruct.getString(taskStruct.fieldIndex("role"));
-                        var salary = taskStruct.getDouble(taskStruct.fieldIndex("salary"));
-                        var project = departmentRef.get(deptId);
-
-                        enrichedEmployees.add(RowFactory.create(empId, empName, role, salary, project));
-                    }
-
-                    System.out.println("employees row");
-
-                    enrichedDepartmentRows.add(RowFactory.create(deptId, deptName, budget, JavaConverters.asScalaBufferConverter(enrichedEmployees).asScala().toSeq()));  // Convert to Seq
-
-                }
+                    List<Row> enrichedEmployees = employees.stream().map(empStruct -> {
+                        var empId = empStruct.getString(empStruct.fieldIndex("empId"));
+                        var empName = empStruct.getString(empStruct.fieldIndex("empName"));
+                        var role = empStruct.getString(empStruct.fieldIndex("role"));
+                        var salary = empStruct.getDouble(empStruct.fieldIndex("salary"));
+                        var dept = departmentRef.get(deptId);
+                        return RowFactory.create(empId, empName, role, salary, dept);
+                    }).collect(Collectors.toList());
+                    return RowFactory.create(deptId, deptName, budget, JavaConverters.asScalaBufferConverter(enrichedEmployees).asScala().toSeq());
+                }).collect(Collectors.toList()));
                 // END DEPARTMENT ROWS
 
                 System.out.println("teams enriched");
