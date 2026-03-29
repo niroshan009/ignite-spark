@@ -18,7 +18,6 @@ import java.util.*;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
-import static org.apache.spark.sql.functions.*;
 
 public class IgniteMainBkp {
 
@@ -123,9 +122,6 @@ public class IgniteMainBkp {
                 List<Row> enrichedProjectRows = new ArrayList<>();
                 List<Row> enrichedDepartmentRows = new ArrayList<>();
 
-                System.out.println(row.getString(row.fieldIndex("orgId")));
-                System.out.println("-------");
-
                 orgId = row.getString(row.fieldIndex("orgId"));
                 orgName = row.getString(row.fieldIndex("orgName"));
                 offices = row.getList(row.fieldIndex("offices"));
@@ -195,8 +191,6 @@ public class IgniteMainBkp {
                 }).collect(Collectors.toList()));
                 // END DEPARTMENT ROWS
 
-                System.out.println("teams enriched");
-
                 enriched.add(RowFactory.create(orgId, orgName,
                         JavaConverters.asScalaBufferConverter(enrichedTeamsRows).asScala().toSeq(),
                         JavaConverters.asScalaBufferConverter(enrichedProjectRows).asScala().toSeq(),
@@ -224,6 +218,4 @@ public class IgniteMainBkp {
                 .start()
                 .awaitTermination();
     }
-
-
 }
