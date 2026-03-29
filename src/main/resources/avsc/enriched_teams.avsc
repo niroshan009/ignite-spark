@@ -46,6 +46,10 @@
                     {
                       "name": "position",
                       "type": "string"
+                    },
+                    {
+                      "name": "ENRICH",
+                      "type": "string"
                     }
                   ]
                 }
@@ -97,6 +101,10 @@
                     },
                     {
                       "name": "dueDate",
+                      "type": "string"
+                    },
+                    {
+                      "name": "ENRICH",
                       "type": "string"
                     }
                   ]
@@ -150,6 +158,10 @@
                     {
                       "name": "salary",
                       "type": "double"
+                    },
+                    {
+                      "name": "ENRICH",
+                      "type": "string"
                     }
                   ]
                 }
