@@ -51,15 +51,11 @@
             <artifactId>aws-java-sdk-bundle</artifactId>
             <version>1.12.262</version>
         </dependency>
-
-        <!-- Ignite JDBC -->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.ignite</groupId>-->
-<!--            <artifactId>ignite-jdbc</artifactId>-->
-<!--            <version>3.0.0</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
-
+        <dependency>
+            <groupId>org.apache.iceberg</groupId>
+            <artifactId>iceberg-aws-bundle</artifactId>
+            <version>1.5.2</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.ignite</groupId>

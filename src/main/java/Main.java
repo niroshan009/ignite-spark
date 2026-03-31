@@ -25,27 +25,32 @@ public class Main {
         Logger.getLogger("org.apache").setLevel(Level.WARN);
         SparkSession sparkSession = SparkSession.builder().appName("transformVoyageStreaming")
                 .master("local[*]")
-                .config("spark.sql.warehouse.dir", "file:///~/tmp")
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
-                .config("spark.sql.catalog.demo.type", "hadoop")
-                .config("spark.sql.catalog.demo.warehouse", "s3a://warehouse")
-                .config("spark.sql.defaultCatalog", "demo")
-                .config("fs.s3a.endpoint", "http://localhost:9000")
-                .config("fs.s3a.path.style.access", "true")
-                .config("fs.s3a.access.key", "admin")
-                .config("fs.s3a.secret.key", "password")
-                .config("spark.sql.mapKeyDedupPolicy", "LAST_WIN")
-                .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+                .appName("IcebergRestMinio")
+                .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
+                .config("spark.sql.catalog.demo.type", "rest")
+                .config("spark.sql.catalog.demo.uri", "http://localhost:8181")
+                .config("spark.sql.catalog.demo.io-impl", "org.apache.iceberg.aws.s3.S3FileIO")
+                .config("spark.sql.catalog.demo.s3.endpoint", "http://localhost:9000")
+                .config("spark.sql.catalog.demo.s3.path-style-access", "true")
+                .config("spark.sql.catalog.demo.s3.access-key-id", "admin")
+                .config("spark.sql.catalog.demo.s3.secret-access-key", "password")
+                .config("spark.sql.catalog.demo.warehouse", "s3://warehouse/")
+                .config("spark.hadoop.fs.s3.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+                .config("spark.hadoop.fs.s3a.endpoint", "http://localhost:9000")
+                .config("spark.hadoop.fs.s3a.access.key", "admin")
+                .config("spark.hadoop.fs.s3a.secret.key", "password")
+                .config("spark.hadoop.fs.s3a.path.style.access", "true")
                 .getOrCreate();
 
 
         Dataset<Row> originalTemas = sparkSession.readStream()
                 .format("iceberg")
-                .option("maxFilesPerTrigger", "1")           // Read 1 file per batch
-                .option("maxBytesPerTrigger", "10485760")    // 10MB per batch (adjust down)
+                .option("maxFilesPerTrigger", "1")
+                .option("maxBytesPerTrigger", "485760")
                 .option("streaming-skip-overwrite-snapshots", "true")
                 .option("streaming-skip-delete-snapshots", "true")
-                .load("db.teams.v3");
+                .load("demo.db.teams.v4");
 
         String enrichedSchemaPath = "src/main/resources/avsc/enriched_teams.avsc";
         Schema enrichedTeamsSchema = new Schema.Parser().parse(new File(enrichedSchemaPath));
@@ -57,7 +62,7 @@ public class Main {
         originalTemas.writeStream()
                 .foreachBatch((Dataset<Row> teamsDf, Long batchId) -> {
 
-                    int optimalPartitions = 40;
+                    int optimalPartitions = 10;
 
                     teamsDf = teamsDf.repartition(optimalPartitions).mapPartitions((MapPartitionsFunction<Row, Row>) it -> {
 
@@ -94,7 +99,7 @@ public class Main {
                                 "PROJECTID in ('" + projectIdString + "') OR  DEPTID in ('" + departmentString + "')";
 
 
-                        System.out.printf("QUERY:::: %s", query);
+//                        System.out.printf("QUERY:::: %s\n", query);
 
                         String url = "jdbc:ignite:thin://127.0.0.1:10800/";
 
@@ -149,7 +154,6 @@ public class Main {
                                 }).collect(Collectors.toList());
                                 return RowFactory.create(teamId, teamName, JavaConverters.asScalaBufferConverter(enrichedTeams).asScala().toSeq());
                             }).collect(Collectors.toList()));
-
                             // END ENRICH TEAM ROWS
 
 
@@ -173,8 +177,6 @@ public class Main {
                                 }).collect(Collectors.toList());
                                 return RowFactory.create(projectId, projectName, status, JavaConverters.asScalaBufferConverter(enrichedTasks).asScala().toSeq());
                             }).collect(Collectors.toList()));
-
-
                             // END PROJECT ROWS
 
 
@@ -212,10 +214,7 @@ public class Main {
 
 
                     teamsDf.printSchema();
-
-
                     teamsDf.explain("cost");
-
                     teamsDf.show(Integer.MAX_VALUE, false);
 
 
@@ -227,8 +226,7 @@ public class Main {
 
                 })
                 .trigger(Trigger.ProcessingTime("10 seconds"))
-
-                .option("checkpointLocation", "./checkpoint")
+                .option("checkpointLocation", "s3://warehouse/checkpoints/console-test")
                 .start()
                 .awaitTermination();
 
