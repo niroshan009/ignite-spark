@@ -50,7 +50,7 @@ public class Main {
                 .option("maxBytesPerTrigger", "485760")
                 .option("streaming-skip-overwrite-snapshots", "true")
                 .option("streaming-skip-delete-snapshots", "true")
-                .load("demo.db.teams.v4");
+                .load("demo.db.teams");
 
         String enrichedSchemaPath = "src/main/resources/avsc/enriched_teams.avsc";
         Schema enrichedTeamsSchema = new Schema.Parser().parse(new File(enrichedSchemaPath));
@@ -62,7 +62,7 @@ public class Main {
         originalTemas.writeStream()
                 .foreachBatch((Dataset<Row> teamsDf, Long batchId) -> {
 
-                    int optimalPartitions = 10;
+                    int optimalPartitions = 3;
 
                     teamsDf = teamsDf.repartition(optimalPartitions).mapPartitions((MapPartitionsFunction<Row, Row>) it -> {
 
@@ -99,14 +99,16 @@ public class Main {
                                 "PROJECTID in ('" + projectIdString + "') OR  DEPTID in ('" + departmentString + "')";
 
 
-//                        System.out.printf("QUERY:::: %s\n", query);
+                        System.out.printf("QUERY:::: %s\n", query);
 
                         String url = "jdbc:ignite:thin://127.0.0.1:10800/";
 
                         try (Connection conn = DriverManager.getConnection(url)) {
                             PreparedStatement st = conn.prepareStatement(query);
 
+
                             try (ResultSet rs = st.executeQuery()) {
+                                System.out.println();
                                 while (rs.next()) {
                                     teamRef.put(rs.getString("teamId"), rs.getString("teamName"));
                                     departmentRef.put(rs.getString("DEPTID"), rs.getString("DEPTNAME"));
@@ -121,6 +123,9 @@ public class Main {
                         }
 
                         List<Row> enriched = new ArrayList<>();
+                        System.out.printf("department size %d \n", departmentRef.size());
+                        System.out.printf("teams size %d \n", teamRef.size());
+                        System.out.printf("project size %d \n", projectRef.size());
 
                         var orgId = "";
                         var orgName = "";
