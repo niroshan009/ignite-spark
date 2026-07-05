@@ -1,3 +1,5 @@
+package com.kd;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.api.java.function.MapPartitionsFunction;
@@ -7,8 +9,10 @@ import org.apache.spark.sql.catalyst.encoders.RowEncoder;
 import org.apache.spark.sql.streaming.StreamingQueryException;
 import org.apache.spark.sql.streaming.Trigger;
 import org.apache.spark.sql.types.StructType;
+import org.slf4j.LoggerFactory;
 import scala.collection.JavaConverters;
 import org.apache.avro.Schema;
+import org.apache.spark.sql.Row;
 
 
 import java.io.File;
@@ -21,45 +25,76 @@ import java.util.stream.Collectors;
 
 public class Main {
 
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) throws IOException, StreamingQueryException, TimeoutException, SQLException {
         Logger.getLogger("org.apache").setLevel(Level.WARN);
-        SparkSession sparkSession = SparkSession.builder().appName("transformVoyageStreaming")
-                .master("local[*]")
-                .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
+
+        String s3Endpoint = System.getenv("S3_URL"); //"http://localhost:9000"
+        String catalogEndpoint = System.getenv("CATALOG_URL"); //"http://localhost:8181"
+        String maxBytesPerTrigger = System.getenv("MAX_BYTES_PER_TRIGGER");
+        String triggerType = System.getenv("TRIGGER_TYPE");
+        String igniteEndpoint = System.getenv("IGNITE_ENDPOINT"); // "jdbc:ignite:thin://127.0.0.1:10800/"
+        String enrichedSchemaPath =  System.getenv("ENRICHED_SCHEMA_PATH"); //"src/main/resources/avsc/enriched_teams.avsc";
+        String s3AccessKey = System.getenv("S3_ACCESS_KEY");
+        String s3SecretKey = System.getenv("S3_SECRET_KEY");
+
+
+        log.info("Setting trigger to for {}", triggerType);
+        log.info("----------------------");
+        log.info("setting variables");
+        log.info("S3_URL: {}",s3Endpoint);
+        log.info("S3_ACCESS_KEY: {}", s3AccessKey);
+        log.info("S3_SECRET_KEY: {}", s3SecretKey);
+        log.info("CATALOG_URL: {}", catalogEndpoint);
+        log.info("MAX_BYTES_PER_TRIGGER: {}", maxBytesPerTrigger);
+        log.info("TRIGGER_TYPE: {}", triggerType);
+        log.info("IGNITE_ENDPOINT: {}", igniteEndpoint);
+        log.info("ENRICHED_SCHEMA_PATH: {}", enrichedSchemaPath);
+        log.info("----------------------");
+
+
+        String streamingCheckpointLocation = "s3a://checkpoint/transformed/";
+
+        SparkSession sparkSession = SparkSession.builder().appName("transformTeamStream")
+//                .master("local[*]")
                 .appName("IcebergRestMinio")
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
                 .config("spark.sql.catalog.demo.type", "rest")
-                .config("spark.sql.catalog.demo.uri", "http://localhost:8181")
+                .config("spark.sql.catalog.demo.uri", catalogEndpoint)
                 .config("spark.sql.catalog.demo.io-impl", "org.apache.iceberg.aws.s3.S3FileIO")
-                .config("spark.sql.catalog.demo.s3.endpoint", "http://localhost:9000")
+                .config("spark.sql.catalog.demo.s3.endpoint", s3Endpoint)
                 .config("spark.sql.catalog.demo.s3.path-style-access", "true")
-                .config("spark.sql.catalog.demo.s3.access-key-id", "admin")
-                .config("spark.sql.catalog.demo.s3.secret-access-key", "password")
+                .config("spark.sql.catalog.demo.s3.access-key-id", s3AccessKey) // S3_ACCESS_KEY
+                .config("spark.sql.catalog.demo.s3.secret-access-key", s3SecretKey) // S3_SECRET_KEY
                 .config("spark.sql.catalog.demo.warehouse", "s3://warehouse/")
+                .config("spark.sql.catalog.demo.s3.region", "us-east-1")
                 .config("spark.hadoop.fs.s3.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-                .config("spark.hadoop.fs.s3a.endpoint", "http://localhost:9000")
-                .config("spark.hadoop.fs.s3a.access.key", "admin")
-                .config("spark.hadoop.fs.s3a.secret.key", "password")
+                .config("spark.hadoop.fs.s3a.endpoint", s3Endpoint)
+                .config("spark.hadoop.fs.s3a.access.key", s3AccessKey) // S3_ACCESS_KEY
+                .config("spark.hadoop.fs.s3a.secret.key", s3SecretKey) // S3_SECRET_KEY
                 .config("spark.hadoop.fs.s3a.path.style.access", "true")
+                .config("spark.hadoop.fs.s3a.endpoint.region", "us-east-1")
                 .getOrCreate();
 
 
-        Dataset<Row> originalTemas = sparkSession.readStream()
+        Dataset<Row> originalTeams = sparkSession.readStream()
                 .format("iceberg")
                 .option("maxFilesPerTrigger", "1")
-                .option("maxBytesPerTrigger", "485760")
+                .option("maxBytesPerTrigger", maxBytesPerTrigger)
                 .option("streaming-skip-overwrite-snapshots", "true")
                 .option("streaming-skip-delete-snapshots", "true")
                 .load("demo.db.teams");
 
-        String enrichedSchemaPath = "src/main/resources/avsc/enriched_teams.avsc";
         Schema enrichedTeamsSchema = new Schema.Parser().parse(new File(enrichedSchemaPath));
 
+        originalTeams.printSchema();
 
-        originalTemas.printSchema();
+        Trigger trigger = triggerType.equalsIgnoreCase("ONCE") ? Trigger.AvailableNow() : Trigger.ProcessingTime("10 seconds");
 
+        log.info("Spark Trigger Type set to : {}", trigger.toString());
 
-        originalTemas.writeStream()
+        originalTeams.writeStream()
                 .foreachBatch((Dataset<Row> teamsDf, Long batchId) -> {
 
                     int optimalPartitions = 3;
@@ -101,9 +136,7 @@ public class Main {
 
                         System.out.printf("QUERY:::: %s\n", query);
 
-                        String url = "jdbc:ignite:thin://127.0.0.1:10800/";
-
-                        try (Connection conn = DriverManager.getConnection(url)) {
+                        try (Connection conn = DriverManager.getConnection(igniteEndpoint)) {
                             PreparedStatement st = conn.prepareStatement(query);
 
 
@@ -215,7 +248,7 @@ public class Main {
                         }
 
                         return enriched.iterator();
-                    }, RowEncoder.apply((StructType) SchemaConverters.toSqlType(enrichedTeamsSchema).dataType()));
+                    }, RowEncoder.encoderFor((StructType) SchemaConverters.toSqlType(enrichedTeamsSchema).dataType()));
 
 
                     teamsDf.printSchema();
@@ -230,8 +263,8 @@ public class Main {
 
 
                 })
-                .trigger(Trigger.ProcessingTime("10 seconds"))
-                .option("checkpointLocation", "s3://warehouse/checkpoints/console-test")
+                .trigger(trigger)
+                .option("checkpointLocation", streamingCheckpointLocation)
                 .start()
                 .awaitTermination();
 

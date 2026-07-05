@@ -1,35 +1,15 @@
-import org.apache.avro.Schema;
+package com.kd.depricated;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.spark.api.java.function.MapPartitionsFunction;
-import org.apache.spark.api.java.package$;
 import org.apache.spark.sql.*;
-import org.apache.spark.sql.avro.SchemaConverters;
-import org.apache.spark.sql.catalyst.encoders.RowEncoder;
-import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema;
-import org.apache.spark.sql.execution.ExplainMode;
-import org.apache.spark.sql.streaming.OutputMode;
-import org.apache.spark.sql.streaming.StreamingQuery;
 import org.apache.spark.sql.streaming.StreamingQueryException;
-import org.apache.spark.sql.types.ArrayType;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.StructType;
-import scala.collection.Iterable;
-import scala.collection.Iterator;
-import scala.collection.JavaConverters;
-import scala.collection.immutable.ArraySeq;
-import scala.collection.immutable.Seq;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeoutException;
-import java.util.stream.Collectors;
 
 import static org.apache.spark.sql.functions.*;
 
