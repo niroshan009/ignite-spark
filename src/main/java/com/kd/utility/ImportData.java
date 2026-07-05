@@ -18,7 +18,7 @@ import java.io.File;
 import java.util.concurrent.TimeoutException;
 
 public class ImportData {
-    private static final org.slf4j.Logger log = LoggerFactory.getLogger(Main.class);
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(ImportData.class);
 
 
     public static void main(String[] args) throws Exception {
@@ -35,7 +35,7 @@ public class ImportData {
 
         log.info("----------------------");
         log.info("setting variables");
-        log.info("S3_URL: {}{}",s3Endpoint);
+        log.info("S3_URL: {}{}", s3Endpoint);
         log.info("S3_ACCESS_KEY: {}{}", "\t".repeat(3), s3AccessKey);
         log.info("S3_SECRET_KEY: {}{}", "\t".repeat(3), s3SecretKey);
         log.info("CATALOG_URL: {}{}", "\t".repeat(3), catalogEndpoint);
