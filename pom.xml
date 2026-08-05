@@ -153,7 +153,7 @@
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
 
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.kd.Main</mainClass>
+                                    <mainClass>com.kd.EnrichData</mainClass>
                                 </transformer>
                             </transformers>
 

@@ -33,7 +33,7 @@ COPY ./target/resources/avsc /app/resources/avsc
 
 
 #ENTRYPOINT ["java","-jar","/app/myapp.jar"]
-ENV SPARK_CLASS="com.kd.Main"
+ENV SPARK_CLASS="com.kd.EnrichData"
 
 #ENTRYPOINT spark-submit --class ${SPARK_CLASS} /app/ignite-spark-1.0.jar
 #ENTRYPOINT ["/opt/spark/bin/spark-submit"]

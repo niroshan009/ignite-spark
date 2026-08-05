@@ -43,3 +43,4 @@ build/
 tmp/
 dependency-reduced-pom.xml
 jars/
+/.idea/

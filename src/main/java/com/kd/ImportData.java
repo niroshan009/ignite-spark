@@ -1,6 +1,5 @@
 package com.kd.utility;
 
-import com.kd.Main;
 import org.apache.avro.Schema;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -103,7 +102,6 @@ public class ImportData {
         StructType sparkSchema = (StructType) SchemaConverters.toSqlType(avroSchema).dataType();
 
         log.info("Reading file from the S3 {}", fileName);
-//        System.out.println(Paths.get(sourceSchema).toUri().getPath());
 
         Dataset<Row> avroStreamData = sparkSession.readStream()
                 .format("avro")
