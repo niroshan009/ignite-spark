@@ -1,4 +1,4 @@
-package com.kd.utility;
+package com.kd;
 
 import org.apache.avro.Schema;
 import org.apache.log4j.Level;
@@ -43,8 +43,8 @@ public class ImportData {
         log.info("FILE_NAME: {}{}", "\t".repeat(3), fileName);
         log.info("----------------------");
 
-        SparkSession sparkSession = SparkSession.builder().appName("transformVoyageStreaming")
-                .master("local[*]")
+        SparkSession sparkSession = SparkSession.builder().appName("ImportTeams")
+//                .master("local[*]")
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
                 .appName("IcebergRestMinio")
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
@@ -73,7 +73,6 @@ public class ImportData {
                 .getOrCreate();
         Trigger trigger = triggerType.equalsIgnoreCase("ONCE") ? Trigger.AvailableNow() : Trigger.ProcessingTime("10 seconds");
 
-        // Add a streaming listener to capture progress and failures
         sparkSession.streams().addListener(new StreamingQueryListener() {
             @Override
             public void onQueryStarted(StreamingQueryListener.QueryStartedEvent event) {
