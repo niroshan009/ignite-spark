@@ -36,6 +36,8 @@ public class EnrichData {
         String enrichedSchemaPath = System.getenv("ENRICHED_SCHEMA_PATH"); //"src/main/resources/avsc/enriched_teams.avsc";
         String s3AccessKey = System.getenv("S3_ACCESS_KEY");
         String s3SecretKey = System.getenv("S3_SECRET_KEY");
+        String appName = System.getenv("APP_NAME");
+
 
 
         log.info("Setting trigger to for {}", triggerType);
@@ -49,6 +51,7 @@ public class EnrichData {
         log.info("TRIGGER_TYPE: {}", triggerType);
         log.info("IGNITE_ENDPOINT: {}", igniteEndpoint);
         log.info("ENRICHED_SCHEMA_PATH: {}", enrichedSchemaPath);
+        log.info("APP_NAME: {}", appName);
         log.info("----------------------");
 
 
@@ -56,7 +59,7 @@ public class EnrichData {
 
         SparkSession sparkSession = SparkSession.builder()
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
-                .appName("ignite-spark-enrich")
+                .appName(appName)
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
                 .config("spark.sql.catalog.demo.type", "rest")
                 .config("spark.sql.catalog.demo.uri", catalogEndpoint)
@@ -116,9 +119,22 @@ public class EnrichData {
         StreamingQuery streamingQuery = originalTeams.writeStream()
                 .foreachBatch((Dataset<Row> teamsDf, Long batchId) -> {
 
+                    long rowCount = teamsDf.count();
+                    log.info("Batch {} has {} rows", batchId, rowCount);
+
+                    if (rowCount == 0) {
+                        log.warn("Empty batch, skipping...");
+                        return;
+                    }
+
+                    log.info("Enriching teams");
+
                     int optimalPartitions = 3;
 
                     teamsDf = teamsDf.repartition(optimalPartitions).mapPartitions((MapPartitionsFunction<Row, Row>) it -> {
+
+
+                        log.info("Enriching................");
 
                         List<Row> originalRows = new ArrayList<>();
 
@@ -153,12 +169,10 @@ public class EnrichData {
                                 "PROJECTID in ('" + projectIdString + "') OR  DEPTID in ('" + departmentString + "')";
 
 
-                        System.out.printf("QUERY:::: %s\n", query);
+                        log.info("QUERY:::: {}", query);
 
                         try (Connection conn = DriverManager.getConnection(igniteEndpoint)) {
                             PreparedStatement st = conn.prepareStatement(query);
-
-
                             try (ResultSet rs = st.executeQuery()) {
                                 System.out.println();
                                 while (rs.next()) {
@@ -167,17 +181,19 @@ public class EnrichData {
                                     projectRef.put(rs.getString("PROJECTID"), rs.getString("PROJECTNAME"));
                                 }
                             } catch (Exception e) {
+                                log.error("Querying resultset failed");
                                 e.printStackTrace();
                             }
 
                         } catch (SQLException ex) {
+                            log.error("Fetching reference data failed");
                             ex.printStackTrace();
                         }
 
                         List<Row> enriched = new ArrayList<>();
-                        System.out.printf("department size %d \n", departmentRef.size());
-                        System.out.printf("teams size %d \n", teamRef.size());
-                        System.out.printf("project size %d \n", projectRef.size());
+                        log.info("department size {}", departmentRef.size());
+                        log.info("teams size {}", teamRef.size());
+                        log.info("project size {}", projectRef.size());
 
                         var orgId = "";
                         var orgName = "";
@@ -269,7 +285,11 @@ public class EnrichData {
                         return enriched.iterator();
                     }, Encoders.row(targetSqlSchema));
 
+                    long enrichedCount = teamsDf.count();
+                    log.info("Enriched {} rows", enrichedCount);
+
                     teamsDf.printSchema();
+
 
                     teamsDf
                             .writeTo("demo.db.enriched_teams")
