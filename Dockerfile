@@ -26,6 +26,7 @@ ENV S3_ACCESS_KEY=rustfsadmin
 ENV S3_SECRET_KEY=rustfsadmin
 ENV FILE_NAME=teams.avro
 ENV AWS_REGION=us-east-1
+ENV APP_NAME=spark-app
 
 
 COPY ./target/ignite-spark-1.0.jar /opt/spark/work/ignite-spark-1.0.jar
