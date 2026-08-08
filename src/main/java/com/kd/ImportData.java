@@ -1,6 +1,5 @@
-package com.kd.utility;
+package com.kd;
 
-import com.kd.Main;
 import org.apache.avro.Schema;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -32,6 +31,7 @@ public class ImportData {
         String sourceSchema = System.getenv("SOURCE_SCHEMA");
         String triggerType = System.getenv("TRIGGER_TYPE");
         String fileName = System.getenv("FILE_NAME");
+        String appName = System.getenv("APP_NAME");
 
         log.info("----------------------");
         log.info("setting variables");
@@ -42,12 +42,12 @@ public class ImportData {
         log.info("SOURCE_SCHEMA: {}{}", "\t".repeat(3), sourceSchema);
         log.info("TRIGGER_TYPE: {}{}", "\t".repeat(3), triggerType);
         log.info("FILE_NAME: {}{}", "\t".repeat(3), fileName);
+        log.info("APP_NAME: {}{}","\t".repeat(3), appName);
         log.info("----------------------");
 
-        SparkSession sparkSession = SparkSession.builder().appName("transformVoyageStreaming")
-                .master("local[*]")
+        SparkSession sparkSession = SparkSession.builder().appName(appName)
+//                .master("local[*]")
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
-                .appName("IcebergRestMinio")
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
                 .config("spark.sql.catalog.demo.type", "rest")
                 .config("spark.sql.catalog.demo.uri", catalogEndpoint)
@@ -74,7 +74,6 @@ public class ImportData {
                 .getOrCreate();
         Trigger trigger = triggerType.equalsIgnoreCase("ONCE") ? Trigger.AvailableNow() : Trigger.ProcessingTime("10 seconds");
 
-        // Add a streaming listener to capture progress and failures
         sparkSession.streams().addListener(new StreamingQueryListener() {
             @Override
             public void onQueryStarted(StreamingQueryListener.QueryStartedEvent event) {
@@ -103,7 +102,6 @@ public class ImportData {
         StructType sparkSchema = (StructType) SchemaConverters.toSqlType(avroSchema).dataType();
 
         log.info("Reading file from the S3 {}", fileName);
-//        System.out.println(Paths.get(sourceSchema).toUri().getPath());
 
         Dataset<Row> avroStreamData = sparkSession.readStream()
                 .format("avro")

@@ -147,13 +147,13 @@
                         <configuration>
                             <finalName>ignite-spark-1.0</finalName>
 
-                            <minimizeJar>true</minimizeJar>
+                            <minimizeJar>false</minimizeJar>
 
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
 
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.kd.Main</mainClass>
+                                    <mainClass>com.kd.EnrichData</mainClass>
                                 </transformer>
                             </transformers>
 

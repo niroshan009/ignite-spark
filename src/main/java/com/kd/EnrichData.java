@@ -1,33 +1,31 @@
 package com.kd;
 
+import org.apache.avro.Schema;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.api.java.function.MapPartitionsFunction;
 import org.apache.spark.sql.*;
 import org.apache.spark.sql.avro.SchemaConverters;
 import org.apache.spark.sql.catalyst.encoders.RowEncoder;
-import org.apache.spark.sql.streaming.StreamingQueryException;
+import org.apache.spark.sql.streaming.StreamingQuery;
+import org.apache.spark.sql.streaming.StreamingQueryListener;
 import org.apache.spark.sql.streaming.Trigger;
 import org.apache.spark.sql.types.StructType;
 import org.slf4j.LoggerFactory;
 import scala.collection.JavaConverters;
-import org.apache.avro.Schema;
-import org.apache.spark.sql.Row;
-
 
 import java.io.File;
-import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
 
-public class Main {
+public class EnrichData {
 
-    private static final org.slf4j.Logger log = LoggerFactory.getLogger(Main.class);
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(EnrichData.class);
 
-    public static void main(String[] args) throws IOException, StreamingQueryException, TimeoutException, SQLException {
+    public static void main(String[] args) throws Exception {
         Logger.getLogger("org.apache").setLevel(Level.WARN);
 
         String s3Endpoint = System.getenv("S3_URL"); //"http://localhost:9000"
@@ -35,15 +33,17 @@ public class Main {
         String maxBytesPerTrigger = System.getenv("MAX_BYTES_PER_TRIGGER");
         String triggerType = System.getenv("TRIGGER_TYPE");
         String igniteEndpoint = System.getenv("IGNITE_ENDPOINT"); // "jdbc:ignite:thin://127.0.0.1:10800/"
-        String enrichedSchemaPath =  System.getenv("ENRICHED_SCHEMA_PATH"); //"src/main/resources/avsc/enriched_teams.avsc";
+        String enrichedSchemaPath = System.getenv("ENRICHED_SCHEMA_PATH"); //"src/main/resources/avsc/enriched_teams.avsc";
         String s3AccessKey = System.getenv("S3_ACCESS_KEY");
         String s3SecretKey = System.getenv("S3_SECRET_KEY");
+        String appName = System.getenv("APP_NAME");
+
 
 
         log.info("Setting trigger to for {}", triggerType);
         log.info("----------------------");
         log.info("setting variables");
-        log.info("S3_URL: {}",s3Endpoint);
+        log.info("S3_URL: {}", s3Endpoint);
         log.info("S3_ACCESS_KEY: {}", s3AccessKey);
         log.info("S3_SECRET_KEY: {}", s3SecretKey);
         log.info("CATALOG_URL: {}", catalogEndpoint);
@@ -51,33 +51,53 @@ public class Main {
         log.info("TRIGGER_TYPE: {}", triggerType);
         log.info("IGNITE_ENDPOINT: {}", igniteEndpoint);
         log.info("ENRICHED_SCHEMA_PATH: {}", enrichedSchemaPath);
+        log.info("APP_NAME: {}", appName);
         log.info("----------------------");
 
 
-        String streamingCheckpointLocation = "s3a://checkpoint/transformed/";
+        String streamingCheckpointLocation = "s3a://checkpoint/enriched/";
 
-        SparkSession sparkSession = SparkSession.builder().appName("transformTeamStream")
-//                .master("local[*]")
-                .appName("IcebergRestMinio")
+        SparkSession sparkSession = SparkSession.builder()
+                .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
+                .appName(appName)
                 .config("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
                 .config("spark.sql.catalog.demo.type", "rest")
                 .config("spark.sql.catalog.demo.uri", catalogEndpoint)
                 .config("spark.sql.catalog.demo.io-impl", "org.apache.iceberg.aws.s3.S3FileIO")
                 .config("spark.sql.catalog.demo.s3.endpoint", s3Endpoint)
                 .config("spark.sql.catalog.demo.s3.path-style-access", "true")
-                .config("spark.sql.catalog.demo.s3.access-key-id", s3AccessKey) // S3_ACCESS_KEY
-                .config("spark.sql.catalog.demo.s3.secret-access-key", s3SecretKey) // S3_SECRET_KEY
+                .config("spark.sql.catalog.demo.s3.access-key-id", s3AccessKey)
+                .config("spark.sql.catalog.demo.s3.secret-access-key", s3SecretKey)
                 .config("spark.sql.catalog.demo.warehouse", "s3://warehouse/")
                 .config("spark.sql.catalog.demo.s3.region", "us-east-1")
-                .config("spark.hadoop.fs.s3.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+                .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
                 .config("spark.hadoop.fs.s3a.endpoint", s3Endpoint)
-                .config("spark.hadoop.fs.s3a.access.key", s3AccessKey) // S3_ACCESS_KEY
-                .config("spark.hadoop.fs.s3a.secret.key", s3SecretKey) // S3_SECRET_KEY
+                .config("spark.hadoop.fs.s3a.access.key", s3AccessKey)
+                .config("spark.hadoop.fs.s3a.secret.key", s3SecretKey)
                 .config("spark.hadoop.fs.s3a.path.style.access", "true")
                 .config("spark.hadoop.fs.s3a.endpoint.region", "us-east-1")
+                .config("spark.hadoop.fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider")
+                .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false")
+                .config("spark.hadoop.com.amazonaws.services.s3.enableV4", "true")
                 .getOrCreate();
 
 
+        sparkSession.streams().addListener(new StreamingQueryListener() {
+            @Override
+            public void onQueryStarted(StreamingQueryListener.QueryStartedEvent event) {
+                log.info("Streaming query started: {}", event.id());
+            }
+
+            @Override
+            public void onQueryProgress(StreamingQueryListener.QueryProgressEvent event) {
+                log.info("Streaming query progress: {}", event.progress().toString());
+            }
+
+            @Override
+            public void onQueryTerminated(StreamingQueryListener.QueryTerminatedEvent event) {
+                log.info("Streaming query terminated: {}, exception={}", event.id(), event.exception());
+            }
+        });
         Dataset<Row> originalTeams = sparkSession.readStream()
                 .format("iceberg")
                 .option("maxFilesPerTrigger", "1")
@@ -87,6 +107,8 @@ public class Main {
                 .load("demo.db.teams");
 
         Schema enrichedTeamsSchema = new Schema.Parser().parse(new File(enrichedSchemaPath));
+        StructType targetSqlSchema = (StructType) SchemaConverters.toSqlType(enrichedTeamsSchema).dataType();
+
 
         originalTeams.printSchema();
 
@@ -94,12 +116,25 @@ public class Main {
 
         log.info("Spark Trigger Type set to : {}", trigger.toString());
 
-        originalTeams.writeStream()
+        StreamingQuery streamingQuery = originalTeams.writeStream()
                 .foreachBatch((Dataset<Row> teamsDf, Long batchId) -> {
+
+                    long rowCount = teamsDf.count();
+                    log.info("Batch {} has {} rows", batchId, rowCount);
+
+                    if (rowCount == 0) {
+                        log.warn("Empty batch, skipping...");
+                        return;
+                    }
+
+                    log.info("Enriching teams");
 
                     int optimalPartitions = 3;
 
                     teamsDf = teamsDf.repartition(optimalPartitions).mapPartitions((MapPartitionsFunction<Row, Row>) it -> {
+
+
+                        log.info("Enriching................");
 
                         List<Row> originalRows = new ArrayList<>();
 
@@ -134,12 +169,10 @@ public class Main {
                                 "PROJECTID in ('" + projectIdString + "') OR  DEPTID in ('" + departmentString + "')";
 
 
-                        System.out.printf("QUERY:::: %s\n", query);
+                        log.info("QUERY:::: {}", query);
 
                         try (Connection conn = DriverManager.getConnection(igniteEndpoint)) {
                             PreparedStatement st = conn.prepareStatement(query);
-
-
                             try (ResultSet rs = st.executeQuery()) {
                                 System.out.println();
                                 while (rs.next()) {
@@ -148,17 +181,19 @@ public class Main {
                                     projectRef.put(rs.getString("PROJECTID"), rs.getString("PROJECTNAME"));
                                 }
                             } catch (Exception e) {
+                                log.error("Querying resultset failed");
                                 e.printStackTrace();
                             }
 
                         } catch (SQLException ex) {
+                            log.error("Fetching reference data failed");
                             ex.printStackTrace();
                         }
 
                         List<Row> enriched = new ArrayList<>();
-                        System.out.printf("department size %d \n", departmentRef.size());
-                        System.out.printf("teams size %d \n", teamRef.size());
-                        System.out.printf("project size %d \n", projectRef.size());
+                        log.info("department size {}", departmentRef.size());
+                        log.info("teams size {}", teamRef.size());
+                        log.info("project size {}", projectRef.size());
 
                         var orgId = "";
                         var orgName = "";
@@ -248,25 +283,42 @@ public class Main {
                         }
 
                         return enriched.iterator();
-                    }, RowEncoder.encoderFor((StructType) SchemaConverters.toSqlType(enrichedTeamsSchema).dataType()));
+                    }, Encoders.row(targetSqlSchema));
 
+                    long enrichedCount = teamsDf.count();
+                    log.info("Enriched {} rows", enrichedCount);
 
                     teamsDf.printSchema();
-                    teamsDf.explain("cost");
-                    teamsDf.show(Integer.MAX_VALUE, false);
 
 
                     teamsDf
-                            .write()
-                            .format("console")
-                            .option("truncate", "false");
-
-
+                            .writeTo("demo.db.enriched_teams")
+                            .option("fanout-enabled", "true")
+                            .append();
                 })
-                .trigger(trigger)
                 .option("checkpointLocation", streamingCheckpointLocation)
-                .start()
-                .awaitTermination();
+                .trigger(trigger)
+                .start();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            log.info("Shutdown signal detected! Stopping stream gracefully...");
+            if (streamingQuery.isActive()) {
+                try {
+                    streamingQuery.stop();
+                } catch (TimeoutException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            sparkSession.stop();
+        }));
+
+        try {
+            streamingQuery.awaitTermination();
+            log.info("data saved to iceberg (query terminated normally)");
+        } catch (Exception e) {
+            log.error("Enrich data failed: ", e);
+            throw new Exception(e.getMessage());
+        }
 
     }
 }
