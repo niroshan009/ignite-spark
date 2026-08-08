@@ -316,7 +316,7 @@ public class EnrichData {
             streamingQuery.awaitTermination();
             log.info("data saved to iceberg (query terminated normally)");
         } catch (Exception e) {
-            log.error("Streaming query failed: ", e);
+            log.error("Enrich data failed: ", e);
             throw new Exception(e.getMessage());
         }
 
